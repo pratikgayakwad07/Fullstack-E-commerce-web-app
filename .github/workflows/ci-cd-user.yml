@@ -9,6 +9,12 @@ on:
          - 'helm-charts/user-service/**'
          - '.github/workflows/ci-cd-user.yml'
 
+   workflow_run:
+     workflows: ["Terraform Dev"]
+     types:
+       - completed  
+   workflow_dispatch:
+
 jobs:
    build-and-deploy:
       runs-on: ubuntu-latest
