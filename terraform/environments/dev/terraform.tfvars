@@ -15,6 +15,8 @@ node_max_size      = 6
 
 admin_iam_usernames = ["eks_admin"]
 enable_helm_addons  = true
+enable_monitoring   = true
+grafana_admin_password = "admin"   # change this to a strong password before applying
 
 tags = {
   Project   = "Purely"
