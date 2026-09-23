@@ -1,0 +1,56 @@
+[
+  {
+    "_id": { "$oid": "6773f28a0f5832bdbc95ebbd" },
+    "categoryName": "Fitness Equipment",
+    "description": "Essential strength, conditioning, and agility training gear for all skill levels.",
+    "imageUrl": "6773f28a0f5832bdbc95ebbd.jpg"
+  },
+  {
+    "_id": { "$oid": "6773f28a0f5832bdbc95ebbe" },
+    "categoryName": "Nutrition and Supplements",
+    "description": "High-quality protein, amino acids, and performance supplements to power your workouts and recovery.",
+    "imageUrl": "6773f28a0f5832bdbc95ebbe.webp"
+  },
+  {
+    "_id": { "$oid": "6773f28a0f5832bdbc95ebc1" },
+    "categoryName": "Home Gym Essentials",
+    "description": "Space-saving machines, racks, and accessories built for home workouts.",
+    "imageUrl": "6773f28a0f5832bdbc95ebc1.webp"
+  },
+  {
+    "_id": { "$oid": "6773f28a0f5832bdbc95ebba" },
+    "categoryName": "Outdoor and Sports",
+    "description": "Gear, hydration packs, and apparel tailored for trail running, cycling, and field athletics.",
+    "imageUrl": "6773f28a0f5832bdbc95ebba.jpg"
+  },
+  {
+    "_id": { "$oid": "6773f28a0f5832bdbc95ebc2" },
+    "categoryName": "Cardio Equipment",
+    "description": "Treadmills, rowing machines, and exercise bikes designed for endurance and calorie burn.",
+    "imageUrl": "6773f28a0f5832bdbc95ebc2.jpg"
+  },
+  {
+    "_id": { "$oid": "6773f28a0f5832bdbc95ebc3" },
+    "categoryName": "Yoga and Recovery",
+    "description": "Mats, foam rollers, massage guns, and mobility tools for active recovery and flexibility.",
+    "imageUrl": "6773f28a0f5832bdbc95ebc3.jpg"
+  },
+  {
+    "_id": { "$oid": "6773f28a0f5832bdbc95ebc4" },
+    "categoryName": "Wearable Fitness Tech",
+    "description": "Smartwatches, heart rate monitors, and fitness trackers to measure your athletic progress.",
+    "imageUrl": "6773f28a0f5832bdbc95ebc4.jpg"
+  },
+  {
+    "_id": { "$oid": "6773f28a0f5832bdbc95ebc5" },
+    "categoryName": "Sportswear and Activewear",
+    "description": "Breathable, sweat-wicking performance apparel engineered for maximum movement.",
+    "imageUrl": "6773f28a0f5832bdbc95ebc5.jpg"
+  },
+  {
+    "_id": { "$oid": "6773f28a0f5832bdbc95ebc6" },
+    "categoryName": "Gym Accessories",
+    "description": "Lifting belts, straps, chalk, and shaker bottles to support your daily training routines.",
+    "imageUrl": "6773f28a0f5832bdbc95ebc6.jpg"
+  }
+]
