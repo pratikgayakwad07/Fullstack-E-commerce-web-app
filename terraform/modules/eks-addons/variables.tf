@@ -53,6 +53,12 @@ variable "grafana_admin_password" {
   default     = "admin"
   sensitive   = true
 }
+
+variable "enable_ebs_csi_driver" {
+  description = "Whether to install the EBS CSI driver EKS addon (required for gp2/gp3 PVCs)"
+  type        = bool
+  default     = true
+}
 variable "tags" {
   description = "Extra tags to apply to every resource in this module"
   type        = map(string)
