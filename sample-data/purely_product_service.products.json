@@ -1,783 +1,111 @@
 [
-  {
-    "_id": {
-      "$oid": "6773f35c0f5832bdbc95ebc4"
-    },
-    "productName": "Yoga Mat Pro non-slip",
-    "price": 1499,
-    "description": "A premium non-slip yoga mat with extra thickness for joint support and superior grip during hot yoga sessions.",
-    "categoryId": "6773f28a0f5832bdbc95ebbd",
-    "categoryName": "Fitness Equipment",
-    "imageUrl": "https://images.unsplash.com/photo-1601925260368-ae2f83cf8b7f?w=400"
-  },
-  {
-    "_id": {
-      "$oid": "6773f35c0f5832bdbc95ebc5"
-    },
-    "productName": "Adjustable Dumbbell Pair 50lb",
-    "price": 18999,
-    "description": "Space-saving adjustable dumbbells changing from 5 to 50 lbs with an easy turn-dial mechanism.",
-    "categoryId": "6773f28a0f5832bdbc95ebbd",
-    "categoryName": "Fitness Equipment",
-    "imageUrl": "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=400"
-  },
-  {
-    "_id": {
-      "$oid": "6773f35c0f5832bdbc95eb01"
-    },
-    "productName": "Speed Cable Jump Rope",
-    "price": 699,
-    "description": "Professional-grade speed jump rope with ball-bearing handles engineered for double-unders and HIIT.",
-    "categoryId": "6773f28a0f5832bdbc95ebbd",
-    "categoryName": "Fitness Equipment",
-    "imageUrl": "https://images.unsplash.com/photo-1616803689943-5601631c7fec?w=400"
-  },
-  {
-    "_id": {
-      "$oid": "6773f35c0f5832bdbc95eb02"
-    },
-    "productName": "Doorway Heavy Duty Pull-Up Bar",
-    "price": 1999,
-    "description": "Multi-grip doorway pull-up bar requiring no drilling, supporting up to 300 lbs safely.",
-    "categoryId": "6773f28a0f5832bdbc95ebbd",
-    "categoryName": "Fitness Equipment",
-    "imageUrl": "https://images.unsplash.com/photo-1599058917765-a780eda07a3e?w=400"
-  },
-  {
-    "_id": {
-      "$oid": "6773f35c0f5832bdbc95eb03"
-    },
-    "productName": "Deep Tissue Grid Foam Roller",
-    "price": 1299,
-    "description": "High-density foam roller designed with a textured surface to mimic massage therapist hands.",
-    "categoryId": "6773f28a0f5832bdbc95ebbd",
-    "categoryName": "Fitness Equipment",
-    "imageUrl": "https://images.unsplash.com/photo-1600881333168-2ef49b341f30?w=400"
-  },
-  {
-    "_id": {
-      "$oid": "6773f35c0f5832bdbc95eb04"
-    },
-    "productName": "Solid Cast Iron Kettlebell 35lb",
-    "price": 3499,
-    "description": "Cast iron kettlebell with a smooth powder coat and wide handle for swings, snatches, and squats.",
-    "categoryId": "6773f28a0f5832bdbc95ebbd",
-    "categoryName": "Fitness Equipment",
-    "imageUrl": "https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=400"
-  },
-  {
-    "_id": {
-      "$oid": "6773f35c0f5832bdbc95eb0d"
-    },
-    "productName": "Heavy Duty Slam Ball 20lb",
-    "price": 2499,
-    "description": "Tough textured rubber shell slam ball designed to absorb impact without bouncing during explosive training.",
-    "categoryId": "6773f28a0f5832bdbc95ebbd",
-    "categoryName": "Fitness Equipment",
-    "imageUrl": "https://images.unsplash.com/photo-1601422407692-ec4eeec1d9b3?w=400"
-  },
-  {
-    "_id": {
-      "$oid": "6773f35c0f5832bdbc95eb0e"
-    },
-    "productName": "Agility Ladder and Cone Set",
-    "price": 1199,
-    "description": "Includes a 20-foot agility ladder with 12 rungs and 10 field cones to improve footwork and speed.",
-    "categoryId": "6773f28a0f5832bdbc95ebbd",
-    "categoryName": "Fitness Equipment",
-    "imageUrl": "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=400"
-  },
-  {
-    "_id": {
-      "$oid": "6773f35c0f5832bdbc95ebc6"
-    },
-    "productName": "100% Whey Isolate Powder 5lbs",
-    "price": 5499,
-    "description": "Rapid-absorbing cold-filtered whey isolate delivering 26g of pure protein and zero fillers per scoop.",
-    "categoryId": "6773f28a0f5832bdbc95ebbe",
-    "categoryName": "Nutrition and Supplements",
-    "imageUrl": "https://images.unsplash.com/photo-1593095948071-474c5cc2989d?w=400"
-  },
-  {
-    "_id": {
-      "$oid": "6773f35c0f5832bdbc95ebc7"
-    },
-    "productName": "Buffered Vitamin C 1000mg",
-    "price": 899,
-    "description": "Non-acidic Vitamin C formula enriched with citrus bioflavonoids to support cellular health in athletes.",
-    "categoryId": "6773f28a0f5832bdbc95ebbe",
-    "categoryName": "Nutrition and Supplements",
-    "imageUrl": "https://images.unsplash.com/photo-1584017911766-d451b3d0e843?w=400"
-  },
-  {
-    "_id": {
-      "$oid": "6773f35c0f5832bdbc95eb05"
-    },
-    "productName": "Ultra-Pure Omega-3 Fish Oil",
-    "price": 1299,
-    "description": "Molecularly distilled fish oil softgels offering high concentrations of EPA and DHA for joint health.",
-    "categoryId": "6773f28a0f5832bdbc95ebbe",
-    "categoryName": "Nutrition and Supplements",
-    "imageUrl": "https://images.unsplash.com/photo-1550572017-edd951b55104?w=400"
-  },
-  {
-    "_id": {
-      "$oid": "6773f35c0f5832bdbc95eb06"
-    },
-    "productName": "Magnesium Glycinate Muscle Formula",
-    "price": 1199,
-    "description": "Highly absorbable magnesium chelate formulated to prevent muscle cramping and assist night recovery.",
-    "categoryId": "6773f28a0f5832bdbc95ebbe",
-    "categoryName": "Nutrition and Supplements",
-    "imageUrl": "https://images.unsplash.com/photo-1471864190281-a93a3070b6de?w=400"
-  },
-  {
-    "_id": {
-      "$oid": "6773f35c0f5832bdbc95eb07"
-    },
-    "productName": "Hydration Electrolyte Mix Lemon-Lime",
-    "price": 1499,
-    "description": "Rapid rehydration electrolyte powder packed with essential minerals and no artificial sweeteners.",
-    "categoryId": "6773f28a0f5832bdbc95ebbe",
-    "categoryName": "Nutrition and Supplements",
-    "imageUrl": "https://images.unsplash.com/photo-1621506289937-a8e4df240d0b?w=400"
-  },
-  {
-    "_id": {
-      "$oid": "6773f35c0f5832bdbc95eb08"
-    },
-    "productName": "Athlete Daily Performance Multivitamin",
-    "price": 999,
-    "description": "Targeted vitamin and antioxidant complex formulated specifically for active men and women.",
-    "categoryId": "6773f28a0f5832bdbc95ebbe",
-    "categoryName": "Nutrition and Supplements",
-    "imageUrl": "https://images.unsplash.com/photo-1628771065518-0d82f1938462?w=400"
-  },
-  {
-    "_id": {
-      "$oid": "6773f35c0f5832bdbc95eb09"
-    },
-    "productName": "Organic Plant Protein Bars 12 Pack",
-    "price": 1899,
-    "description": "Chewy plant-based protein bars providing 20g of clean pea protein and low net carbs.",
-    "categoryId": "6773f28a0f5832bdbc95ebbe",
-    "categoryName": "Nutrition and Supplements",
-    "imageUrl": "https://images.unsplash.com/photo-1499028344343-cd173ffc68a9?w=400"
-  },
-  {
-    "_id": {
-      "$oid": "6773f35c0f5832bdbc95eb0f"
-    },
-    "productName": "Creatine Monohydrate Unflavored 500g",
-    "price": 1999,
-    "description": "Micronized 100% pure creatine monohydrate powder designed to boost power output and muscle size.",
-    "categoryId": "6773f28a0f5832bdbc95ebbe",
-    "categoryName": "Nutrition and Supplements",
-    "imageUrl": "https://images.unsplash.com/photo-1535914254981-b5012eebbd15?w=400"
-  },
-  {
-    "_id": {
-      "$oid": "6773f35c0f5832bdbc95eb10"
-    },
-    "productName": "High Voltage Pre-Workout Powder",
-    "price": 2499,
-    "description": "Pre-workout energy formula with beta-alanine, L-citrulline, and natural caffeine for explosive training energy.",
-    "categoryId": "6773f28a0f5832bdbc95ebbe",
-    "categoryName": "Nutrition and Supplements",
-    "imageUrl": "https://images.unsplash.com/photo-1627483297886-49710ae1fc22?w=400"
-  },
-  {
-    "_id": {
-      "$oid": "6773f35c0f5832bdbc95ebcc"
-    },
-    "productName": "Resistance Loop Bands 5-Piece Set",
-    "price": 899,
-    "description": "Durable natural latex resistance loops offering 5 progressive strength levels for targeted glute and leg activation.",
-    "categoryId": "6773f28a0f5832bdbc95ebc1",
-    "categoryName": "Home Gym Essentials",
-    "imageUrl": "https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=400"
-  },
-  {
-    "_id": {
-      "$oid": "6773f35c0f5832bdbc95ebcd"
-    },
-    "productName": "Anti-Burst Core Stability Ball 65cm",
-    "price": 1199,
-    "description": "Heavy-duty Swiss exercise ball designed for abdominal core training, balance drills, and posture support.",
-    "categoryId": "6773f28a0f5832bdbc95ebc1",
-    "categoryName": "Home Gym Essentials",
-    "imageUrl": "https://images.unsplash.com/photo-1518611012118-696072aa579a?w=400"
-  },
-  {
-    "_id": {
-      "$oid": "6773f35c0f5832bdbc95eb19"
-    },
-    "productName": "Adjustable Incline Decline Workout Bench",
-    "price": 8999,
-    "description": "Heavy gauge steel utility bench with 6 backrest positions for versatile dumbbell pressing.",
-    "categoryId": "6773f28a0f5832bdbc95ebc1",
-    "categoryName": "Home Gym Essentials",
-    "imageUrl": "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=400"
-  },
-  {
-    "_id": {
-      "$oid": "6773f35c0f5832bdbc95eb20"
-    },
-    "productName": "Dual Wheel Ab Carver Roller",
-    "price": 799,
-    "description": "Ergonomic ab roller wheel featuring ergonomic hand grips and double-wheel balance for core stability.",
-    "categoryId": "6773f28a0f5832bdbc95ebc1",
-    "categoryName": "Home Gym Essentials",
-    "imageUrl": "https://images.unsplash.com/photo-1604480133435-25b86862d276?w=400"
-  },
-  {
-    "_id": {
-      "$oid": "6773f35c0f5832bdbc95eb21"
-    },
-    "productName": "Olympic Wooden Gymnastic Rings",
-    "price": 2499,
-    "description": "Solid birch wood gymnastics rings with quick-adjust numbered nylon straps for bodyweight calisthenics.",
-    "categoryId": "6773f28a0f5832bdbc95ebc1",
-    "categoryName": "Home Gym Essentials",
-    "imageUrl": "https://images.unsplash.com/photo-1547592180-85f173990554?w=400"
-  },
-  {
-    "_id": {
-      "$oid": "6773f35c0f5832bdbc95eb22"
-    },
-    "productName": "Thick High Impact Floor Tiles Set",
-    "price": 2999,
-    "description": "Interlocking high-density EVA foam mat tiles providing durable shock absorption for heavy home workout equipment.",
-    "categoryId": "6773f28a0f5832bdbc95ebc1",
-    "categoryName": "Home Gym Essentials",
-    "imageUrl": "https://images.unsplash.com/photo-1584735935682-2f2b69dff9d2?w=400"
-  },
-  {
-    "_id": {
-      "$oid": "6773f35c0f5832bdbc95eb11"
-    },
-    "productName": "Heavy Duty Squat Rack Stand",
-    "price": 16999,
-    "description": "Freestanding steel squat rack stands with adjustable J-cups and safety spotter arms for home barbell training.",
-    "categoryId": "6773f28a0f5832bdbc95ebc1",
-    "categoryName": "Home Gym Essentials",
-    "imageUrl": "https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=400"
-  },
-  {
-    "_id": {
-      "$oid": "6773f35c0f5832bdbc95eb12"
-    },
-    "productName": "Olympic Barbell Bar 7ft",
-    "price": 11999,
-    "description": "Hard chrome 20kg Olympic barbell rated for up to 1,000 lbs with smooth rotating brass bushings.",
-    "categoryId": "6773f28a0f5832bdbc95ebc1",
-    "categoryName": "Home Gym Essentials",
-    "imageUrl": "https://images.unsplash.com/photo-1517963879433-6ad2b056d712?w=400"
-  },
-  {
-    "_id": {
-      "$oid": "6773f35c0f5832bdbc95eb36"
-    },
-    "productName": "Pro Cushion Road Running Shoes",
-    "price": 6499,
-    "description": "Lightweight road running shoes engineered with high-rebound midsole foam and breathable mesh uppers.",
-    "categoryId": "6773f28a0f5832bdbc95ebba",
-    "categoryName": "Outdoor and Sports",
-    "imageUrl": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400"
-  },
-  {
-    "_id": {
-      "$oid": "6773f35c0f5832bdbc95eb37"
-    },
-    "productName": "Trail Hydration Running Vest 5L",
-    "price": 3499,
-    "description": "Ergonomic vest pack fitted with a 1.5L hydration bladder and front quick-stash pockets for long-distance runs.",
-    "categoryId": "6773f28a0f5832bdbc95ebba",
-    "categoryName": "Outdoor and Sports",
-    "imageUrl": "https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=400"
-  },
-  {
-    "_id": {
-      "$oid": "6773f35c0f5832bdbc95eb38"
-    },
-    "productName": "Gel-Padded Cycling Gloves",
-    "price": 899,
-    "description": "Half-finger road cycling gloves featuring shock-absorbing gel palms and reflective accents.",
-    "categoryId": "6773f28a0f5832bdbc95ebba",
-    "categoryName": "Outdoor and Sports",
-    "imageUrl": "https://images.unsplash.com/photo-1530143584546-02191bc84eb5?w=400"
-  },
-  {
-    "_id": {
-      "$oid": "6773f35c0f5832bdbc95eb39"
-    },
-    "productName": "Carbon Fiber Trekking Poles",
-    "price": 2999,
-    "description": "Collapsible ultralight carbon trekking poles designed with natural cork handles to absorb vibration on trails.",
-    "categoryId": "6773f28a0f5832bdbc95ebba",
-    "categoryName": "Outdoor and Sports",
-    "imageUrl": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=400"
-  },
-  {
-    "_id": {
-      "$oid": "6773f35c0f5832bdbc95eb40"
-    },
-    "productName": "Insulated Stainless Sports Bottle 32oz",
-    "price": 1299,
-    "description": "Double-wall vacuum insulated water flask equipped with a straw cap for easy drinking on the move.",
-    "categoryId": "6773f28a0f5832bdbc95ebba",
-    "categoryName": "Outdoor and Sports",
-    "imageUrl": "https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=400"
-  },
-  {
-    "_id": {
-      "$oid": "6773f35c0f5832bdbc95eb41"
-    },
-    "productName": "Athletic Compression Knee Support Sleeve",
-    "price": 799,
-    "description": "Breathable knit knee sleeve providing targeted joint stabilization and reduced swelling during field sports.",
-    "categoryId": "6773f28a0f5832bdbc95ebba",
-    "categoryName": "Outdoor and Sports",
-    "imageUrl": "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=400"
-  },
-  {
-    "_id": {
-      "$oid": "6773f35c0f5832bdbc95eb42"
-    },
-    "productName": "Sweatproof Sport Sunscreen SPF 50",
-    "price": 699,
-    "description": "Broad-spectrum mineral sunscreen formulated specifically for high-intensity, water-resistant outdoor activity.",
-    "categoryId": "6773f28a0f5832bdbc95ebba",
-    "categoryName": "Outdoor and Sports",
-    "imageUrl": "https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=400"
-  },
-  {
-    "_id": {
-      "$oid": "6773f35c0f5832bdbc95eb13"
-    },
-    "productName": "Trail Grip Mountain Bike Helmet",
-    "price": 3999,
-    "description": "In-mold mountain bike helmet featuring extended rear coverage and adjustable visor for trail riding.",
-    "categoryId": "6773f28a0f5832bdbc95ebba",
-    "categoryName": "Outdoor and Sports",
-    "imageUrl": "https://images.unsplash.com/photo-1571068316344-75bc76f77890?w=400"
-  },
-  {
-    "_id": {
-      "$oid": "6773f35c0f5832bdbc95eb14"
-    },
-    "productName": "Folding Electric Treadmill 3.0 HP",
-    "price": 44999,
-    "description": "Quiet motor treadmill featuring automatic incline, shock-absorbing belt, and compact foldability.",
-    "categoryId": "6773f28a0f5832bdbc95ebc2",
-    "categoryName": "Cardio Equipment",
-    "imageUrl": "https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=400"
-  },
-  {
-    "_id": {
-      "$oid": "6773f35c0f5832bdbc95eb15"
-    },
-    "productName": "Magnetic Resistance Indoor Exercise Bike",
-    "price": 24999,
-    "description": "Stationary spin bike equipped with smooth magnetic resistance, heavy flywheel, and digital performance display.",
-    "categoryId": "6773f28a0f5832bdbc95ebc2",
-    "categoryName": "Cardio Equipment",
-    "imageUrl": "https://images.unsplash.com/photo-1591741535018-d042766c62eb?w=400"
-  },
-  {
-    "_id": {
-      "$oid": "6773f35c0f5832bdbc95eb16"
-    },
-    "productName": "Air Resistance Rowing Machine",
-    "price": 39999,
-    "description": "Full-body workout rower featuring dynamic air resistance and a steel rail for smooth sliding motion.",
-    "categoryId": "6773f28a0f5832bdbc95ebc2",
-    "categoryName": "Cardio Equipment",
-    "imageUrl": "https://images.unsplash.com/photo-1544033527-b192daee1f5b?w=400"
-  },
-  {
-    "_id": {
-      "$oid": "6773f35c0f5832bdbc95eb17"
-    },
-    "productName": "Compact Elliptical Cross Trainer",
-    "price": 29999,
-    "description": "Low-impact elliptical trainer with 16 resistance levels and pulse-sensing handlebar grips.",
-    "categoryId": "6773f28a0f5832bdbc95ebc2",
-    "categoryName": "Cardio Equipment",
-    "imageUrl": "https://images.unsplash.com/photo-1524594152303-9fd13543fe6e?w=400"
-  },
-  {
-    "_id": {
-      "$oid": "6773f35c0f5832bdbc95eb18"
-    },
-    "productName": "Vertical Stair Climber Machine",
-    "price": 14999,
-    "description": "Full-body vertical climber simulating natural climbing movement to combine cardio with bodyweight resistance.",
-    "categoryId": "6773f28a0f5832bdbc95ebc2",
-    "categoryName": "Cardio Equipment",
-    "imageUrl": "https://images.unsplash.com/photo-1593079831268-3381b0db4a77?w=400"
-  },
-  {
-    "_id": {
-      "$oid": "6773f35c0f5832bdbc95eb1a"
-    },
-    "productName": "Under-Desk Walking Pad Treadmill",
-    "price": 18999,
-    "description": "Flat, compact walking pad engineered for low-speed desk exercise with remote control operation.",
-    "categoryId": "6773f28a0f5832bdbc95ebc2",
-    "categoryName": "Cardio Equipment",
-    "imageUrl": "https://images.unsplash.com/photo-1623874228601-f4193c7b1818?w=400"
-  },
-  {
-    "_id": {
-      "$oid": "6773f35c0f5832bdbc95eb1b"
-    },
-    "productName": "Commercial Curved Manual Treadmill",
-    "price": 79999,
-    "description": "Motorless curved treadmill powered by your own stride for maximum athletic power development.",
-    "categoryId": "6773f28a0f5832bdbc95ebc2",
-    "categoryName": "Cardio Equipment",
-    "imageUrl": "https://images.unsplash.com/photo-1538805060514-97d9cc17730c?w=400"
-  },
-  {
-    "_id": {
-      "$oid": "6773f35c0f5832bdbc95eb1c"
-    },
-    "productName": "Weighted Agility Jump Rope 1lb",
-    "price": 1299,
-    "description": "Heavy cable jump rope designed to build upper-body stamina and shoulder endurance during cardio.",
-    "categoryId": "6773f28a0f5832bdbc95ebc2",
-    "categoryName": "Cardio Equipment",
-    "imageUrl": "https://images.unsplash.com/photo-1434682881908-b43d0467b798?w=400"
-  },
-  {
-    "_id": {
-      "$oid": "6773f35c0f5832bdbc95eb1d"
-    },
-    "productName": "Deep Tissue Percussion Massage Gun",
-    "price": 5999,
-    "description": "Ultra-quiet brushless motor massage gun with 6 interchangeable heads for rapid muscle recovery.",
-    "categoryId": "6773f28a0f5832bdbc95ebc3",
-    "categoryName": "Yoga and Recovery",
-    "imageUrl": "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=400"
-  },
-  {
-    "_id": {
-      "$oid": "6773f35c0f5832bdbc95eb1e"
-    },
-    "productName": "Cork Yoga Block 2-Pack",
-    "price": 999,
-    "description": "Eco-friendly sustainable cork blocks providing sturdy balance support for alignment and deeper stretches.",
-    "categoryId": "6773f28a0f5832bdbc95ebc3",
-    "categoryName": "Yoga and Recovery",
-    "imageUrl": "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=400"
-  },
-  {
-    "_id": {
-      "$oid": "6773f35c0f5832bdbc95eb1f"
-    },
-    "productName": "Multifunctional Yoga Strap Band",
-    "price": 499,
-    "description": "Durable cotton stretching strap with D-ring buckles to assist mobility drills and hamstring flexibility.",
-    "categoryId": "6773f28a0f5832bdbc95ebc3",
-    "categoryName": "Yoga and Recovery",
-    "imageUrl": "https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=400"
-  },
-  {
-    "_id": {
-      "$oid": "6773f35c0f5832bdbc95eb23"
-    },
-    "productName": "Acupressure Mat and Pillow Set",
-    "price": 1899,
-    "description": "Targeted acupressure point mat engineered to relieve back tension and stimulate post-workout blood flow.",
-    "categoryId": "6773f28a0f5832bdbc95ebc3",
-    "categoryName": "Yoga and Recovery",
-    "imageUrl": "https://images.unsplash.com/photo-1600618528240-fb9fc964b853?w=400"
-  },
-  {
-    "_id": {
-      "$oid": "6773f35c0f5832bdbc95eb24"
-    },
-    "productName": "Vibrating Massage Therapy Ball",
-    "price": 2499,
-    "description": "High-intensity vibrating mobility ball for pinpoint myofascial release in glutes, calves, and feet.",
-    "categoryId": "6773f28a0f5832bdbc95ebc3",
-    "categoryName": "Yoga and Recovery",
-    "imageUrl": "https://images.unsplash.com/photo-1607962837359-5e7e89f86776?w=400"
-  },
-  {
-    "_id": {
-      "$oid": "6773f35c0f5832bdbc95eb25"
-    },
-    "productName": "Hot and Cold Compression Knee Wrap",
-    "price": 1299,
-    "description": "Flexible gel ice pack wrap delivering targeted thermal relief to sore joints after heavy lifting.",
-    "categoryId": "6773f28a0f5832bdbc95ebc3",
-    "categoryName": "Yoga and Recovery",
-    "imageUrl": "https://images.unsplash.com/photo-1570831739435-6601aa3fa4fb?w=400"
-  },
-  {
-    "_id": {
-      "$oid": "6773f35c0f5832bdbc95eb26"
-    },
-    "productName": "Inversion Table for Back Decompression",
-    "price": 12999,
-    "description": "Heavy-duty steel inversion table designed to decompress spine pressure and improve hamstring flexibility.",
-    "categoryId": "6773f28a0f5832bdbc95ebc3",
-    "categoryName": "Yoga and Recovery",
-    "imageUrl": "https://images.unsplash.com/photo-1603988492906-4fb0fb251cf8?w=400"
-  },
-  {
-    "_id": {
-      "$oid": "6773f35c0f5832bdbc95eb27"
-    },
-    "productName": "Trigger Point Mobility Peanut Ball",
-    "price": 699,
-    "description": "Double silicone massage sphere engineered for release along thoracic spine and neck muscles.",
-    "categoryId": "6773f28a0f5832bdbc95ebc3",
-    "categoryName": "Yoga and Recovery",
-    "imageUrl": "https://images.unsplash.com/photo-1559757175-5700dde675bc?w=400"
-  },
-  {
-    "_id": {
-      "$oid": "6773f35c0f5832bdbc95eb28"
-    },
-    "productName": "GPS Multisport Fitness Watch",
-    "price": 14999,
-    "description": "Rugged fitness watch featuring built-in GPS, continuous heart rate tracking, and specialized sports modes.",
-    "categoryId": "6773f28a0f5832bdbc95ebc4",
-    "categoryName": "Wearable Fitness Tech",
-    "imageUrl": "https://images.unsplash.com/photo-1575311373937-040b8e1fd5b6?w=400"
-  },
-  {
-    "_id": {
-      "$oid": "6773f35c0f5832bdbc95eb29"
-    },
-    "productName": "Bluetooth Chest Strap Heart Rate Monitor",
-    "price": 3499,
-    "description": "High-accuracy dual ANT+ and Bluetooth HR chest sensor designed for intense cardio tracking.",
-    "categoryId": "6773f28a0f5832bdbc95ebc4",
-    "categoryName": "Wearable Fitness Tech",
-    "imageUrl": "https://images.unsplash.com/photo-1510017803434-a899398421b3?w=400"
-  },
-  {
-    "_id": {
-      "$oid": "6773f35c0f5832bdbc95eb2a"
-    },
-    "productName": "Slim Activity Tracker Band",
-    "price": 2499,
-    "description": "Sleek water-resistant fitness wristband tracking daily steps, calorie expenditure, and sleep cycles.",
-    "categoryId": "6773f28a0f5832bdbc95ebc4",
-    "categoryName": "Wearable Fitness Tech",
-    "imageUrl": "https://images.unsplash.com/photo-1523395243481-163f8f6155ab?w=400"
-  },
-  {
-    "_id": {
-      "$oid": "6773f35c0f5832bdbc95eb2b"
-    },
-    "productName": "Waterproof Sport Open-Ear Earbuds",
-    "price": 5999,
-    "description": "Bone conduction open-ear headphones offering IP67 sweatproofing and situational awareness outdoors.",
-    "categoryId": "6773f28a0f5832bdbc95ebc4",
-    "categoryName": "Wearable Fitness Tech",
-    "imageUrl": "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=400"
-  },
-  {
-    "_id": {
-      "$oid": "6773f35c0f5832bdbc95eb2c"
-    },
-    "productName": "Smart Body Fat Bluetooth Scale",
-    "price": 1999,
-    "description": "Bioelectric impedance scale measuring weight, body fat %, muscle mass, and visceral fat.",
-    "categoryId": "6773f28a0f5832bdbc95ebc4",
-    "categoryName": "Wearable Fitness Tech",
-    "imageUrl": "https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=400"
-  },
-  {
-    "_id": {
-      "$oid": "6773f35c0f5832bdbc95eb2d"
-    },
-    "productName": "Optical Heart Rate Armband",
-    "price": 3999,
-    "description": "Precision optical sensor armband designed for comfortable placement on forearms during workouts.",
-    "categoryId": "6773f28a0f5832bdbc95ebc4",
-    "categoryName": "Wearable Fitness Tech",
-    "imageUrl": "https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?w=400"
-  },
-  {
-    "_id": {
-      "$oid": "6773f35c0f5832bdbc95eb2e"
-    },
-    "productName": "Smart Jump Rope with Digital Counter",
-    "price": 1499,
-    "description": "Connected speed rope tracking total rotations, skip pace, and calories burned straight to an app.",
-    "categoryId": "6773f28a0f5832bdbc95ebc4",
-    "categoryName": "Wearable Fitness Tech",
-    "imageUrl": "https://images.unsplash.com/photo-1519311965067-36d3e5f33d39?w=400"
-  },
-  {
-    "_id": {
-      "$oid": "6773f35c0f5832bdbc95eb2f"
-    },
-    "productName": "Men Dry-Fit Training T-Shirt",
-    "price": 1199,
-    "description": "Moisture-wicking athletic tee made with 4-way stretch fabric for uninhibited mobility in the weight room.",
-    "categoryId": "6773f28a0f5832bdbc95ebc5",
-    "categoryName": "Sportswear and Activewear",
-    "imageUrl": "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=400"
-  },
-  {
-    "_id": {
-      "$oid": "6773f35c0f5832bdbc95eb30"
-    },
-    "productName": "Women High-Waisted Workout Leggings",
-    "price": 1999,
-    "description": "Squat-proof seamless compression leggings with a supportive high waistband and side phone pockets.",
-    "categoryId": "6773f28a0f5832bdbc95ebc5",
-    "categoryName": "Sportswear and Activewear",
-    "imageUrl": "https://images.unsplash.com/photo-1506629082955-511b1aa562c8?w=400"
-  },
-  {
-    "_id": {
-      "$oid": "6773f35c0f5832bdbc95eb31"
-    },
-    "productName": "Men Lightweight 7-Inch Gym Shorts",
-    "price": 1299,
-    "description": "Quick-drying athletic shorts featuring a built-in compression liner and zippered media pocket.",
-    "categoryId": "6773f28a0f5832bdbc95ebc5",
-    "categoryName": "Sportswear and Activewear",
-    "imageUrl": "https://images.unsplash.com/photo-1591195853828-11db59a44f6b?w=400"
-  },
-  {
-    "_id": {
-      "$oid": "6773f35c0f5832bdbc95eb32"
-    },
-    "productName": "Women High Impact Sports Bra",
-    "price": 1499,
-    "description": "Maximum support sports bra designed with criss-cross back straps and breathable mesh panels.",
-    "categoryId": "6773f28a0f5832bdbc95ebc5",
-    "categoryName": "Sportswear and Activewear",
-    "imageUrl": "https://images.unsplash.com/photo-1518310383802-640c2de311b2?w=400"
-  },
-  {
-    "_id": {
-      "$oid": "6773f35c0f5832bdbc95eb33"
-    },
-    "productName": "Compression Base Layer Long Sleeve",
-    "price": 1699,
-    "description": "Thermal body-mapping base layer engineered to keep muscles warm during cold weather workouts.",
-    "categoryId": "6773f28a0f5832bdbc95ebc5",
-    "categoryName": "Sportswear and Activewear",
-    "imageUrl": "https://images.unsplash.com/photo-1483721310020-03333e577078?w=400"
-  },
-  {
-    "_id": {
-      "$oid": "6773f35c0f5832bdbc95eb34"
-    },
-    "productName": "Unisex Sweat Wicking Headband Set",
-    "price": 499,
-    "description": "Non-slip performance headbands designed to trap sweat and keep hair secure during intense exercise.",
-    "categoryId": "6773f28a0f5832bdbc95ebc5",
-    "categoryName": "Sportswear and Activewear",
-    "imageUrl": "https://images.unsplash.com/photo-1594381898411-846e7d193883?w=400"
-  },
-  {
-    "_id": {
-      "$oid": "6773f35c0f5832bdbc95eb35"
-    },
-    "productName": "Cushioned Athletic Ankle Socks 6-Pack",
-    "price": 799,
-    "description": "Reinforced heel and toe athletic socks with arch support bands for blister-free training.",
-    "categoryId": "6773f28a0f5832bdbc95ebc5",
-    "categoryName": "Sportswear and Activewear",
-    "imageUrl": "https://images.unsplash.com/photo-1511556532299-8f662fc26c06?w=400"
-  },
-  {
-    "_id": {
-      "$oid": "6773f35c0f5832bdbc95eb3a"
-    },
-    "productName": "Leather Weightlifting Belt 10mm",
-    "price": 2499,
-    "description": "Genuine leather powerlifting belt with heavy-duty steel prong buckle for maximal core bracing support.",
-    "categoryId": "6773f28a0f5832bdbc95ebc6",
-    "categoryName": "Gym Accessories",
-    "imageUrl": "https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?w=400"
-  },
-  {
-    "_id": {
-      "$oid": "6773f35c0f5832bdbc95eb3b"
-    },
-    "productName": "Padded Weightlifting Wrist Straps",
-    "price": 599,
-    "description": "Heavy cotton lifting straps with neoprene wrist padding to enhance grip strength on heavy pulls.",
-    "categoryId": "6773f28a0f5832bdbc95ebc6",
-    "categoryName": "Gym Accessories",
-    "imageUrl": "https://images.unsplash.com/photo-1605296867304-46d5465a13f1?w=400"
-  },
-  {
-    "_id": {
-      "$oid": "6773f35c0f5832bdbc95eb3c"
-    },
-    "productName": "Stainless Steel Protein Shaker Bottle",
-    "price": 1199,
-    "description": "Double-wall insulated shaker bottle with wire whisk ball to blend smooth protein shakes without odors.",
-    "categoryId": "6773f28a0f5832bdbc95ebc6",
-    "categoryName": "Gym Accessories",
-    "imageUrl": "https://images.unsplash.com/photo-1570197788417-0e82375c9371?w=400"
-  },
-  {
-    "_id": {
-      "$oid": "6773f35c0f5832bdbc95eb3d"
-    },
-    "productName": "Gym Chalk Block 4-Pack",
-    "price": 699,
-    "description": "Pure magnesium carbonate chalk blocks to eliminate sweat and ensure superior grip on barbells.",
-    "categoryId": "6773f28a0f5832bdbc95ebc6",
-    "categoryName": "Gym Accessories",
-    "imageUrl": "https://images.unsplash.com/photo-1597347316205-36f6c451902a?w=400"
-  },
-  {
-    "_id": {
-      "$oid": "6773f35c0f5832bdbc95eb3e"
-    },
-    "productName": "Large Capacity Gym Duffel Bag",
-    "price": 1999,
-    "description": "Water-resistant gym holdall featuring an isolated ventilated shoe compartment and wet clothes pocket.",
-    "categoryId": "6773f28a0f5832bdbc95ebc6",
-    "categoryName": "Gym Accessories",
-    "imageUrl": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400"
-  },
-  {
-    "_id": {
-      "$oid": "6773f35c0f5832bdbc95eb3f"
-    },
-    "productName": "Elastic Wrist Wraps for Powerlifting",
-    "price": 799,
-    "description": "18-inch heavy-duty elastic wrist wraps with thumb loops to stabilize wrists during bench press and overhead squats.",
-    "categoryId": "6773f28a0f5832bdbc95ebc6",
-    "categoryName": "Gym Accessories",
-    "imageUrl": "https://images.unsplash.com/photo-1532384748853-8f54a8f476e2?w=400"
-  },
-  {
-    "_id": {
-      "$oid": "6773f35c0f5832bdbc95eb43"
-    },
-    "productName": "Thick Barbell Squat Pad",
-    "price": 899,
-    "description": "Ergonomic high-density foam barbell neck cushion to protect shoulders during hip thrusts and squats.",
-    "categoryId": "6773f28a0f5832bdbc95ebc6",
-    "categoryName": "Gym Accessories",
-    "imageUrl": "https://images.unsplash.com/photo-1574680096145-d05b474e2155?w=400"
-  },
-  {
-    "_id": {
-      "$oid": "6773f35c0f5832bdbc95eb44"
-    },
-    "productName": "Fast Drying Microfiber Gym Towel 2-Pack",
-    "price": 699,
-    "description": "Ultra-absorbent lightweight microfiber workout towels designed to dry quickly and fit gym benches.",
-    "categoryId": "6773f28a0f5832bdbc95ebc6",
-    "categoryName": "Gym Accessories",
-    "imageUrl": "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=400"
-  }
+  { "_id": "prod001", "productName": "Yoga Mat", "price": 25.99, "description": "Non-slip yoga mat for stability.", "imageUrl": "https://images.unsplash.com/photo-1601925228025-6e8a8fdcd290?w=400", "categoryId": "cat001" },
+  { "_id": "prod002", "productName": "Dumbbells Set", "price": 50.00, "description": "Adjustable dumbbells for versatile workouts.", "imageUrl": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400", "categoryId": "cat001" },
+  { "_id": "prod003", "productName": "Treadmill", "price": 499.99, "description": "Foldable treadmill with multiple speed settings.", "imageUrl": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400", "categoryId": "cat001" },
+  { "_id": "prod004", "productName": "Kettlebells", "price": 35.00, "description": "Durable kettlebells for strength training.", "imageUrl": "https://images.unsplash.com/photo-1611735341450-74d61e660ad2?w=400", "categoryId": "cat001" },
+  { "_id": "prod005", "productName": "Jump Rope", "price": 9.99, "description": "Lightweight jump rope for cardio workouts.", "imageUrl": "https://images.unsplash.com/photo-1598289431512-b97b0917afb4?w=400", "categoryId": "cat001" },
+  { "_id": "prod006", "productName": "Pull-Up Bar", "price": 45.00, "description": "Door-mounted pull-up bar.", "imageUrl": "https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=400", "categoryId": "cat001" },
+  { "_id": "prod007", "productName": "Exercise Bike", "price": 299.99, "description": "Stationary bike with resistance control.", "imageUrl": "https://images.unsplash.com/photo-1532029837206-abbe2b7620e3?w=400", "categoryId": "cat001" },
+  { "_id": "prod008", "productName": "Foam Roller", "price": 19.99, "description": "Foam roller for muscle recovery.", "imageUrl": "https://images.unsplash.com/photo-1600881333168-2ef49b341f30?w=400", "categoryId": "cat001" },
+  { "_id": "prod009", "productName": "Adjustable Bench", "price": 120.00, "description": "Multi-angle bench for strength training.", "imageUrl": "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=400", "categoryId": "cat001" },
+  { "_id": "prod010", "productName": "Rowing Machine", "price": 350.00, "description": "Compact rowing machine for full-body workouts.", "imageUrl": "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=400", "categoryId": "cat001" },
+
+  { "_id": "prod011", "productName": "Protein Powder", "price": 45.50, "description": "Premium whey protein powder.", "imageUrl": "https://images.unsplash.com/photo-1593095948071-474c5cc2989d?w=400", "categoryId": "cat002" },
+  { "_id": "prod012", "productName": "Vitamin C Tablets", "price": 12.99, "description": "Boost immunity with Vitamin C.", "imageUrl": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=400", "categoryId": "cat002" },
+  { "_id": "prod013", "productName": "Omega-3 Capsules", "price": 20.00, "description": "Supports heart and brain health.", "imageUrl": "https://images.unsplash.com/photo-1550572017-edd951b55104?w=400", "categoryId": "cat002" },
+  { "_id": "prod014", "productName": "Multivitamins", "price": 18.00, "description": "Daily multivitamin supplement.", "imageUrl": "https://images.unsplash.com/photo-1576602976047-174e57a47881?w=400", "categoryId": "cat002" },
+  { "_id": "prod015", "productName": "Energy Bars", "price": 15.00, "description": "Nutritious energy bars for on-the-go.", "imageUrl": "https://images.unsplash.com/photo-1622484212850-eb596d769edc?w=400", "categoryId": "cat002" },
+  { "_id": "prod016", "productName": "Creatine Monohydrate", "price": 25.00, "description": "Supports strength and endurance.", "imageUrl": "https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=400", "categoryId": "cat002" },
+  { "_id": "prod017", "productName": "Collagen Powder", "price": 30.00, "description": "Promotes healthy skin and joints.", "imageUrl": "https://images.unsplash.com/photo-1631549916768-4119b2e5f926?w=400", "categoryId": "cat002" },
+  { "_id": "prod018", "productName": "Herbal Green Tea", "price": 10.00, "description": "Organic green tea for detox.", "imageUrl": "https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=400", "categoryId": "cat002" },
+  { "_id": "prod019", "productName": "Electrolyte Drink Mix", "price": 14.00, "description": "Hydration support during workouts.", "imageUrl": "https://images.unsplash.com/photo-1571942676516-bcab84649e44?w=400", "categoryId": "cat002" },
+  { "_id": "prod020", "productName": "Probiotic Capsules", "price": 22.00, "description": "Supports gut health and digestion.", "imageUrl": "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400", "categoryId": "cat002" },
+
+  { "_id": "prod021", "productName": "Face Wash", "price": 8.99, "description": "Gentle daily face cleanser.", "imageUrl": "https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=400", "categoryId": "cat003" },
+  { "_id": "prod022", "productName": "Moisturizer SPF 30", "price": 14.99, "description": "Daily moisturizer with sun protection.", "imageUrl": "https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400", "categoryId": "cat003" },
+  { "_id": "prod023", "productName": "Shampoo", "price": 7.50, "description": "Hydrating shampoo for all hair types.", "imageUrl": "https://images.unsplash.com/photo-1527799820374-87642af6e6bc?w=400", "categoryId": "cat003" },
+  { "_id": "prod024", "productName": "Conditioner", "price": 7.50, "description": "Nourishing conditioner for smooth hair.", "imageUrl": "https://images.unsplash.com/photo-1585232352617-5e2ab8b60e32?w=400", "categoryId": "cat003" },
+  { "_id": "prod025", "productName": "Body Lotion", "price": 11.00, "description": "Deep-moisturizing body lotion.", "imageUrl": "https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=400", "categoryId": "cat003" },
+  { "_id": "prod026", "productName": "Lip Balm", "price": 3.49, "description": "Hydrating lip balm with SPF.", "imageUrl": "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=400", "categoryId": "cat003" },
+  { "_id": "prod027", "productName": "Deodorant Roll-On", "price": 5.99, "description": "Long-lasting 48-hour protection.", "imageUrl": "https://images.unsplash.com/photo-1619451334792-150fd785ee74?w=400", "categoryId": "cat003" },
+  { "_id": "prod028", "productName": "Hand Sanitizer", "price": 4.99, "description": "Kills 99.9% of germs instantly.", "imageUrl": "https://images.unsplash.com/photo-1584483766114-2cea6facdf57?w=400", "categoryId": "cat003" },
+  { "_id": "prod029", "productName": "Sunscreen SPF 50", "price": 13.99, "description": "Broad-spectrum UV protection.", "imageUrl": "https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=400", "categoryId": "cat003" },
+  { "_id": "prod030", "productName": "Toothpaste", "price": 4.29, "description": "Whitening toothpaste with fluoride.", "imageUrl": "https://images.unsplash.com/photo-1607613009820-a29f7bb81c04?w=400", "categoryId": "cat003" },
+
+  { "_id": "prod031", "productName": "Meditation Cushion", "price": 29.99, "description": "Comfortable cushion for mindfulness practice.", "imageUrl": "https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=400", "categoryId": "cat004" },
+  { "_id": "prod032", "productName": "Aromatherapy Diffuser", "price": 34.99, "description": "Ultrasonic diffuser for essential oils.", "imageUrl": "https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=400", "categoryId": "cat004" },
+  { "_id": "prod033", "productName": "Lavender Essential Oil", "price": 12.00, "description": "Pure lavender oil for relaxation.", "imageUrl": "https://images.unsplash.com/photo-1576618148400-f54bed99fcfd?w=400", "categoryId": "cat004" },
+  { "_id": "prod034", "productName": "Stress Relief Supplement", "price": 24.99, "description": "Ashwagandha blend for stress relief.", "imageUrl": "https://images.unsplash.com/photo-1512069772995-ec65ed45afd6?w=400", "categoryId": "cat004" },
+  { "_id": "prod035", "productName": "Sleep Aid Melatonin", "price": 15.99, "description": "Natural melatonin for better sleep.", "imageUrl": "https://images.unsplash.com/photo-1541480601022-2308c0f02487?w=400", "categoryId": "cat004" },
+  { "_id": "prod036", "productName": "Gratitude Journal", "price": 10.99, "description": "Guided journal for daily mindfulness.", "imageUrl": "https://images.unsplash.com/photo-1517971071642-34a2d3eaac27?w=400", "categoryId": "cat004" },
+  { "_id": "prod037", "productName": "Acupressure Mat", "price": 39.99, "description": "Relieves tension and promotes relaxation.", "imageUrl": "https://images.unsplash.com/photo-1601925228025-6e8a8fdcd290?w=400", "categoryId": "cat004" },
+  { "_id": "prod038", "productName": "White Noise Machine", "price": 44.99, "description": "Helps with sleep and focus.", "imageUrl": "https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=400", "categoryId": "cat004" },
+  { "_id": "prod039", "productName": "Himalayan Salt Lamp", "price": 22.00, "description": "Creates a calming ambiance.", "imageUrl": "https://images.unsplash.com/photo-1602523961358-f9f03dd557db?w=400", "categoryId": "cat004" },
+  { "_id": "prod040", "productName": "Mindfulness Colouring Book", "price": 9.99, "description": "Adult colouring for stress reduction.", "imageUrl": "https://images.unsplash.com/photo-1456735190827-d1262f71b8a3?w=400", "categoryId": "cat004" },
+
+  { "_id": "prod041", "productName": "Resistance Bands Set", "price": 18.99, "description": "Set of 5 resistance bands for home training.", "imageUrl": "https://images.unsplash.com/photo-1598971639058-fab3c3109a00?w=400", "categoryId": "cat005" },
+  { "_id": "prod042", "productName": "Gym Flooring Tiles", "price": 55.00, "description": "Interlocking foam tiles for gym flooring.", "imageUrl": "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=400", "categoryId": "cat005" },
+  { "_id": "prod043", "productName": "Pull-Up Tower", "price": 180.00, "description": "Multi-function power tower for home gym.", "imageUrl": "https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=400", "categoryId": "cat005" },
+  { "_id": "prod044", "productName": "Weight Plate Set", "price": 90.00, "description": "Olympic weight plate set.", "imageUrl": "https://images.unsplash.com/photo-1581009137042-c552e485697a?w=400", "categoryId": "cat005" },
+  { "_id": "prod045", "productName": "Barbell", "price": 75.00, "description": "Standard 20kg barbell bar.", "imageUrl": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400", "categoryId": "cat005" },
+  { "_id": "prod046", "productName": "Gym Gloves", "price": 14.99, "description": "Anti-slip gym gloves for better grip.", "imageUrl": "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=400", "categoryId": "cat005" },
+  { "_id": "prod047", "productName": "Workout Mirror", "price": 230.00, "description": "Full-length wall mirror for form check.", "imageUrl": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400", "categoryId": "cat005" },
+  { "_id": "prod048", "productName": "Dip Bar Station", "price": 65.00, "description": "Freestanding dip bar for upper body.", "imageUrl": "https://images.unsplash.com/photo-1590487988256-9ed24133863e?w=400", "categoryId": "cat005" },
+  { "_id": "prod049", "productName": "Ab Roller Wheel", "price": 12.99, "description": "Core strengthening ab roller.", "imageUrl": "https://images.unsplash.com/photo-1601925228025-6e8a8fdcd290?w=400", "categoryId": "cat005" },
+  { "_id": "prod050", "productName": "Speed Bag Platform", "price": 85.00, "description": "Boxing speed bag platform for training.", "imageUrl": "https://images.unsplash.com/photo-1549476464-37392f717541?w=400", "categoryId": "cat005" },
+
+  { "_id": "prod051", "productName": "Wireless Earbuds", "price": 79.99, "description": "True wireless earbuds with noise cancellation.", "imageUrl": "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=400", "categoryId": "cat006" },
+  { "_id": "prod052", "productName": "Smart Watch", "price": 199.99, "description": "Health and fitness smartwatch.", "imageUrl": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400", "categoryId": "cat006" },
+  { "_id": "prod053", "productName": "Bluetooth Speaker", "price": 49.99, "description": "Portable waterproof Bluetooth speaker.", "imageUrl": "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=400", "categoryId": "cat006" },
+  { "_id": "prod054", "productName": "Power Bank 20000mAh", "price": 35.00, "description": "High-capacity fast-charging power bank.", "imageUrl": "https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?w=400", "categoryId": "cat006" },
+  { "_id": "prod055", "productName": "USB-C Hub", "price": 29.99, "description": "7-in-1 USB-C hub with HDMI and SD card.", "imageUrl": "https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=400", "categoryId": "cat006" },
+  { "_id": "prod056", "productName": "Laptop Stand", "price": 22.99, "description": "Ergonomic adjustable laptop stand.", "imageUrl": "https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?w=400", "categoryId": "cat006" },
+  { "_id": "prod057", "productName": "Mechanical Keyboard", "price": 89.99, "description": "Compact mechanical keyboard with RGB.", "imageUrl": "https://images.unsplash.com/photo-1541140532154-b024d705b90a?w=400", "categoryId": "cat006" },
+  { "_id": "prod058", "productName": "Wireless Mouse", "price": 24.99, "description": "Ergonomic silent wireless mouse.", "imageUrl": "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=400", "categoryId": "cat006" },
+  { "_id": "prod059", "productName": "Webcam 1080p", "price": 59.99, "description": "HD webcam with built-in microphone.", "imageUrl": "https://images.unsplash.com/photo-1587826080692-f439cd0b70da?w=400", "categoryId": "cat006" },
+  { "_id": "prod060", "productName": "Phone Case", "price": 12.99, "description": "Shockproof protective phone case.", "imageUrl": "https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?w=400", "categoryId": "cat006" },
+
+  { "_id": "prod061", "productName": "Dish Soap", "price": 3.49, "description": "Concentrated dish soap for tough grease.", "imageUrl": "https://images.unsplash.com/photo-1585664811087-47f65abbad64?w=400", "categoryId": "cat007" },
+  { "_id": "prod062", "productName": "Laundry Detergent", "price": 12.99, "description": "Liquid laundry detergent for all fabrics.", "imageUrl": "https://images.unsplash.com/photo-1582735689369-4fe89db7114c?w=400", "categoryId": "cat007" },
+  { "_id": "prod063", "productName": "All-Purpose Cleaner", "price": 5.99, "description": "Multi-surface spray cleaner.", "imageUrl": "https://images.unsplash.com/photo-1563453392212-326f5e854473?w=400", "categoryId": "cat007" },
+  { "_id": "prod064", "productName": "Microfibre Cloths Pack", "price": 8.99, "description": "Pack of 10 reusable microfibre cloths.", "imageUrl": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400", "categoryId": "cat007" },
+  { "_id": "prod065", "productName": "Toilet Paper 12-Roll", "price": 9.49, "description": "Soft 3-ply toilet paper rolls.", "imageUrl": "https://images.unsplash.com/photo-1584389890373-af4c5f4ade6a?w=400", "categoryId": "cat007" },
+  { "_id": "prod066", "productName": "Kitchen Sponges 6-Pack", "price": 4.99, "description": "Dual-sided scrubbing sponges.", "imageUrl": "https://images.unsplash.com/photo-1585441695325-2c6b5bbc1f5e?w=400", "categoryId": "cat007" },
+  { "_id": "prod067", "productName": "Trash Bags 50-Pack", "price": 7.99, "description": "Heavy-duty drawstring trash bags.", "imageUrl": "https://images.unsplash.com/photo-1611284446314-60a58ac0deb9?w=400", "categoryId": "cat007" },
+  { "_id": "prod068", "productName": "Mop and Bucket Set", "price": 24.99, "description": "Spin mop with refillable bucket.", "imageUrl": "https://images.unsplash.com/photo-1563453392212-326f5e854473?w=400", "categoryId": "cat007" },
+  { "_id": "prod069", "productName": "Air Freshener Spray", "price": 4.29, "description": "Odour-eliminating spray freshener.", "imageUrl": "https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=400", "categoryId": "cat007" },
+  { "_id": "prod070", "productName": "Vacuum Cleaner Bags", "price": 6.99, "description": "Compatible vacuum bags pack of 5.", "imageUrl": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400", "categoryId": "cat007" },
+
+  { "_id": "prod071", "productName": "Basmati Rice 5kg", "price": 11.99, "description": "Premium long-grain basmati rice.", "imageUrl": "https://images.unsplash.com/photo-1586201375761-83865001e31c?w=400", "categoryId": "cat008" },
+  { "_id": "prod072", "productName": "Whole Wheat Bread", "price": 3.29, "description": "Freshly baked whole wheat bread loaf.", "imageUrl": "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=400", "categoryId": "cat008" },
+  { "_id": "prod073", "productName": "Almond Milk 1L", "price": 2.99, "description": "Unsweetened plant-based almond milk.", "imageUrl": "https://images.unsplash.com/photo-1556881286-fc6915169721?w=400", "categoryId": "cat008" },
+  { "_id": "prod074", "productName": "Orange Juice 1L", "price": 3.49, "description": "100% pure squeezed orange juice.", "imageUrl": "https://images.unsplash.com/photo-1600271886742-f049cd451bba?w=400", "categoryId": "cat008" },
+  { "_id": "prod075", "productName": "Mixed Nuts 500g", "price": 8.99, "description": "Premium roasted mixed nuts.", "imageUrl": "https://images.unsplash.com/photo-1545126914-7cba74cf5b73?w=400", "categoryId": "cat008" },
+  { "_id": "prod076", "productName": "Olive Oil 500ml", "price": 7.49, "description": "Extra virgin cold-pressed olive oil.", "imageUrl": "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=400", "categoryId": "cat008" },
+  { "_id": "prod077", "productName": "Greek Yogurt 400g", "price": 3.99, "description": "High-protein creamy Greek yogurt.", "imageUrl": "https://images.unsplash.com/photo-1488477181946-6428a0291777?w=400", "categoryId": "cat008" },
+  { "_id": "prod078", "productName": "Dark Chocolate 70%", "price": 4.49, "description": "Rich 70% dark chocolate bar.", "imageUrl": "https://images.unsplash.com/photo-1606312619070-d48b4c652a52?w=400", "categoryId": "cat008" },
+  { "_id": "prod079", "productName": "Instant Oats 1kg", "price": 5.99, "description": "Quick-cook rolled oats.", "imageUrl": "https://images.unsplash.com/photo-1571748982800-fa51082c2224?w=400", "categoryId": "cat008" },
+  { "_id": "prod080", "productName": "Honey 500g", "price": 6.99, "description": "Raw organic wildflower honey.", "imageUrl": "https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=400", "categoryId": "cat008" },
+
+  { "_id": "prod081", "productName": "Running Shoes", "price": 89.99, "description": "Lightweight breathable running shoes.", "imageUrl": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400", "categoryId": "cat009" },
+  { "_id": "prod082", "productName": "Sports T-Shirt", "price": 19.99, "description": "Moisture-wicking sports t-shirt.", "imageUrl": "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w=400", "categoryId": "cat009" },
+  { "_id": "prod083", "productName": "Yoga Pants", "price": 34.99, "description": "High-waist flexible yoga pants.", "imageUrl": "https://images.unsplash.com/photo-1506629082955-511b1aa562c8?w=400", "categoryId": "cat009" },
+  { "_id": "prod084", "productName": "Hoodie Sweatshirt", "price": 44.99, "description": "Cozy pullover hoodie sweatshirt.", "imageUrl": "https://images.unsplash.com/photo-1556821840-3a63f15732ce?w=400", "categoryId": "cat009" },
+  { "_id": "prod085", "productName": "Denim Jeans", "price": 54.99, "description": "Classic straight-fit denim jeans.", "imageUrl": "https://images.unsplash.com/photo-1542272604-787c3835535d?w=400", "categoryId": "cat009" },
+  { "_id": "prod086", "productName": "Formal Dress Shirt", "price": 39.99, "description": "Slim-fit cotton formal shirt.", "imageUrl": "https://images.unsplash.com/photo-1607345366928-199ea26cfe3e?w=400", "categoryId": "cat009" },
+  { "_id": "prod087", "productName": "Leather Belt", "price": 22.00, "description": "Genuine leather reversible belt.", "imageUrl": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400", "categoryId": "cat009" },
+  { "_id": "prod088", "productName": "Sunglasses UV400", "price": 27.99, "description": "Polarised sunglasses with UV400 protection.", "imageUrl": "https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=400", "categoryId": "cat009" },
+  { "_id": "prod089", "productName": "Backpack 30L", "price": 49.99, "description": "Durable waterproof travel backpack.", "imageUrl": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400", "categoryId": "cat009" },
+  { "_id": "prod090", "productName": "Sports Socks 5-Pack", "price": 12.99, "description": "Cushioned ankle sports socks.", "imageUrl": "https://images.unsplash.com/photo-1586350977771-b3b0abd50c82?w=400", "categoryId": "cat009" },
+
+  { "_id": "prod091", "productName": "Spiral Notebook A5", "price": 4.99, "description": "200-page lined spiral notebook.", "imageUrl": "https://images.unsplash.com/photo-1544816155-12df9643f363?w=400", "categoryId": "cat010" },
+  { "_id": "prod092", "productName": "Ballpoint Pens 10-Pack", "price": 3.49, "description": "Smooth-writing blue ballpoint pens.", "imageUrl": "https://images.unsplash.com/photo-1455390582262-044cdead277a?w=400", "categoryId": "cat010" },
+  { "_id": "prod093", "productName": "Highlighter Set", "price": 5.99, "description": "Assorted colour highlighters, pack of 6.", "imageUrl": "https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=400", "categoryId": "cat010" },
+  { "_id": "prod094", "productName": "Sticky Notes Pack", "price": 4.29, "description": "Multicolour adhesive sticky notes.", "imageUrl": "https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=400", "categoryId": "cat010" },
+  { "_id": "prod095", "productName": "Desk Organiser", "price": 15.99, "description": "5-compartment desktop organiser.", "imageUrl": "https://images.unsplash.com/photo-1568952433726-3896e3881c65?w=400", "categoryId": "cat010" },
+  { "_id": "prod096", "productName": "Stapler with Staples", "price": 8.99, "description": "Full-strip stapler with 1000 staples.", "imageUrl": "https://images.unsplash.com/photo-1544816155-12df9643f363?w=400", "categoryId": "cat010" },
+  { "_id": "prod097", "productName": "Scissors", "price": 4.49, "description": "Stainless steel office scissors.", "imageUrl": "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=400", "categoryId": "cat010" },
+  { "_id": "prod098", "productName": "Ruler 30cm", "price": 1.99, "description": "Transparent plastic 30cm ruler.", "imageUrl": "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=400", "categoryId": "cat010" },
+  { "_id": "prod099", "productName": "Tape Dispenser", "price": 6.99, "description": "Desktop tape dispenser with extra roll.", "imageUrl": "https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=400", "categoryId": "cat010" },
+  { "_id": "prod100", "productName": "Whiteboard Markers 4-Pack", "price": 5.49, "description": "Assorted colour dry-erase markers.", "imageUrl": "https://images.unsplash.com/photo-1455390582262-044cdead277a?w=400", "categoryId": "cat010" }
 ]
