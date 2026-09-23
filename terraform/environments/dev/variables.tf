@@ -105,6 +105,19 @@ variable "enable_helm_addons" {
   default     = true
 }
 
+variable "enable_monitoring" {
+  description = "Whether to deploy Prometheus and Grafana (kube-prometheus-stack)"
+  type        = bool
+  default     = true
+}
+
+variable "grafana_admin_password" {
+  description = "Admin password for Grafana dashboard"
+  type        = string
+  default     = "admin"
+  sensitive   = true
+}
+
 variable "tags" {
   description = "Common tags to apply to all resources"
   type        = map(string)
