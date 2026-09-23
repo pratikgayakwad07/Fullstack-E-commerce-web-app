@@ -1,56 +1,12 @@
 [
-  {
-    "_id": { "$oid": "6773f28a0f5832bdbc95ebbd" },
-    "categoryName": "Fitness Equipment",
-    "description": "Essential strength, conditioning, and agility training gear for all skill levels.",
-    "imageUrl": "6773f28a0f5832bdbc95ebbd.jpg"
-  },
-  {
-    "_id": { "$oid": "6773f28a0f5832bdbc95ebbe" },
-    "categoryName": "Nutrition and Supplements",
-    "description": "High-quality protein, amino acids, and performance supplements to power your workouts and recovery.",
-    "imageUrl": "6773f28a0f5832bdbc95ebbe.webp"
-  },
-  {
-    "_id": { "$oid": "6773f28a0f5832bdbc95ebc1" },
-    "categoryName": "Home Gym Essentials",
-    "description": "Space-saving machines, racks, and accessories built for home workouts.",
-    "imageUrl": "6773f28a0f5832bdbc95ebc1.webp"
-  },
-  {
-    "_id": { "$oid": "6773f28a0f5832bdbc95ebba" },
-    "categoryName": "Outdoor and Sports",
-    "description": "Gear, hydration packs, and apparel tailored for trail running, cycling, and field athletics.",
-    "imageUrl": "6773f28a0f5832bdbc95ebba.jpg"
-  },
-  {
-    "_id": { "$oid": "6773f28a0f5832bdbc95ebc2" },
-    "categoryName": "Cardio Equipment",
-    "description": "Treadmills, rowing machines, and exercise bikes designed for endurance and calorie burn.",
-    "imageUrl": "6773f28a0f5832bdbc95ebc2.jpg"
-  },
-  {
-    "_id": { "$oid": "6773f28a0f5832bdbc95ebc3" },
-    "categoryName": "Yoga and Recovery",
-    "description": "Mats, foam rollers, massage guns, and mobility tools for active recovery and flexibility.",
-    "imageUrl": "6773f28a0f5832bdbc95ebc3.jpg"
-  },
-  {
-    "_id": { "$oid": "6773f28a0f5832bdbc95ebc4" },
-    "categoryName": "Wearable Fitness Tech",
-    "description": "Smartwatches, heart rate monitors, and fitness trackers to measure your athletic progress.",
-    "imageUrl": "6773f28a0f5832bdbc95ebc4.jpg"
-  },
-  {
-    "_id": { "$oid": "6773f28a0f5832bdbc95ebc5" },
-    "categoryName": "Sportswear and Activewear",
-    "description": "Breathable, sweat-wicking performance apparel engineered for maximum movement.",
-    "imageUrl": "6773f28a0f5832bdbc95ebc5.jpg"
-  },
-  {
-    "_id": { "$oid": "6773f28a0f5832bdbc95ebc6" },
-    "categoryName": "Gym Accessories",
-    "description": "Lifting belts, straps, chalk, and shaker bottles to support your daily training routines.",
-    "imageUrl": "6773f28a0f5832bdbc95ebc6.jpg"
-  }
+  { "_id": "cat001", "categoryName": "Fitness Equipment", "description": "Equipment to help you achieve fitness goals.", "imageUrl": "6773f28a0f5832bdbc95ebbd.jpg" },
+  { "_id": "cat002", "categoryName": "Nutrition and Supplements", "description": "Products to support nutritional needs.", "imageUrl": "6773f28a0f5832bdbc95ebbe.webp" },
+  { "_id": "cat003", "categoryName": "Personal Care", "description": "Products for hygiene and well-being.", "imageUrl": "6773f28a0f5832bdbc95ebbf.jpg" },
+  { "_id": "cat004", "categoryName": "Mental Wellness", "description": "Tools and resources for mental health.", "imageUrl": "6773f28a0f5832bdbc95ebc0.jpg" },
+  { "_id": "cat005", "categoryName": "Home Gym Essentials", "description": "Essential items for a home gym.", "imageUrl": "6773f28a0f5832bdbc95ebc1.webp" },
+  { "_id": "cat006", "categoryName": "Electronics & Gadgets", "description": "Smartphones, laptops, and accessories.", "imageUrl": "6773f28a0f5832bdbc95ebbd.jpg" },
+  { "_id": "cat007", "categoryName": "Household Essentials", "description": "Daily household items and cleaning supplies.", "imageUrl": "6773f28a0f5832bdbc95ebbe.webp" },
+  { "_id": "cat008", "categoryName": "Groceries & Beverages", "description": "Fresh groceries, packaged foods, and drinks.", "imageUrl": "6773f28a0f5832bdbc95ebbf.jpg" },
+  { "_id": "cat009", "categoryName": "Fashion & Apparel", "description": "Clothing, footwear, and accessories.", "imageUrl": "6773f28a0f5832bdbc95ebc0.jpg" },
+  { "_id": "cat010", "categoryName": "Stationery & Office Supplies", "description": "Notebooks, pens, and office essentials.", "imageUrl": "6773f28a0f5832bdbc95ebc1.webp" }
 ]
