@@ -17,6 +17,7 @@ admin_iam_usernames = ["eks_admin"]
 enable_helm_addons  = true
 enable_monitoring   = true
 grafana_admin_password = "admin"   # change this to a strong password before applying
+enable_ebs_csi_driver  = true
 
 tags = {
   Project   = "Purely"
