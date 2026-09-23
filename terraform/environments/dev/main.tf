@@ -79,6 +79,7 @@ module "eks_addons" {
   enable_metrics_server     = var.enable_helm_addons
   enable_monitoring         = var.enable_monitoring
   grafana_admin_password    = var.grafana_admin_password
+  enable_ebs_csi_driver     = var.enable_ebs_csi_driver
   tags                      = var.tags
 
   depends_on = [
