@@ -170,6 +170,76 @@ resource "helm_release" "metrics_server" {
     value = "--kubelet-insecure-tls"
   }
 }
+# ---------------------------------------------------------------------------
+# Prometheus + Grafana — kube-prometheus-stack
+# Deploys: Prometheus, Alertmanager, Grafana, node-exporter, kube-state-metrics
+# Namespace: monitoring
+# Grafana access: kubectl port-forward svc/kube-prometheus-stack-grafana 3000:80 -n monitoring
+# ---------------------------------------------------------------------------
+resource "helm_release" "kube_prometheus_stack" {
+  count      = var.enable_monitoring ? 1 : 0
+  name       = "kube-prometheus-stack"
+  repository = "https://prometheus-community.github.io/helm-charts"
+  chart      = "kube-prometheus-stack"
+  namespace  = "monitoring"
+  version    = "58.5.3"
+
+  create_namespace = true
+
+  # Grafana
+  set {
+    name  = "grafana.enabled"
+    value = "true"
+  }
+  set {
+    name  = "grafana.adminPassword"
+    value = var.grafana_admin_password
+  }
+  set {
+    name  = "grafana.service.type"
+    value = "ClusterIP"
+  }
+
+  # Prometheus retention and persistent storage
+  set {
+    name  = "prometheus.enabled"
+    value = "true"
+  }
+  set {
+    name  = "prometheus.prometheusSpec.retention"
+    value = "15d"
+  }
+  set {
+    name  = "prometheus.prometheusSpec.storageSpec.volumeClaimTemplate.spec.storageClassName"
+    value = "gp2"
+  }
+  set {
+    name  = "prometheus.prometheusSpec.storageSpec.volumeClaimTemplate.spec.resources.requests.storage"
+    value = "10Gi"
+  }
+
+  # Alertmanager
+  set {
+    name  = "alertmanager.enabled"
+    value = "true"
+  }
+
+  # node-exporter — host-level metrics from every node
+  set {
+    name  = "nodeExporter.enabled"
+    value = "true"
+  }
+
+  # kube-state-metrics — K8s object metrics (pods, deployments, HPA, etc.)
+  set {
+    name  = "kubeStateMetrics.enabled"
+    value = "true"
+  }
+
+  depends_on = [
+    helm_release.metrics_server
+  ]
+}
 
 
 # ---------------------------------------------------------------------------
