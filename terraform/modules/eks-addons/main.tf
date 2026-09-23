@@ -170,6 +170,53 @@ resource "helm_release" "metrics_server" {
     value = "--kubelet-insecure-tls"
   }
 }
+
+# ---------------------------------------------------------------------------
+# EBS CSI Driver — required for PVC provisioning (gp2/gp3 volumes)
+# Prometheus needs this to persist its data
+# ---------------------------------------------------------------------------
+resource "aws_iam_role" "ebs_csi_driver" {
+  count = var.enable_ebs_csi_driver ? 1 : 0
+  name  = "${var.environment}-ebs-csi-driver-role"
+
+  assume_role_policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [{
+      Effect = "Allow"
+      Principal = {
+        Federated = var.oidc_provider_arn
+      }
+      Action = "sts:AssumeRoleWithWebIdentity"
+      Condition = {
+        StringEquals = {
+          "${replace(var.cluster_oidc_issuer_url, "https://", "")}:aud" = "sts.amazonaws.com"
+          "${replace(var.cluster_oidc_issuer_url, "https://", "")}:sub" = "system:serviceaccount:kube-system:ebs-csi-controller-sa"
+        }
+      }
+    }]
+  })
+
+  tags = local.common_tags
+}
+
+resource "aws_iam_role_policy_attachment" "ebs_csi_driver" {
+  count      = var.enable_ebs_csi_driver ? 1 : 0
+  role       = aws_iam_role.ebs_csi_driver[0].name
+  policy_arn = "arn:aws:iam::aws:policy/service-role/AmazonEBSCSIDriverPolicy"
+}
+
+resource "aws_eks_addon" "ebs_csi_driver" {
+  count                    = var.enable_ebs_csi_driver ? 1 : 0
+  cluster_name             = var.cluster_name
+  addon_name               = "aws-ebs-csi-driver"
+  service_account_role_arn = aws_iam_role.ebs_csi_driver[0].arn
+  resolve_conflicts_on_create = "OVERWRITE"
+  resolve_conflicts_on_update = "OVERWRITE"
+
+  tags = local.common_tags
+
+  depends_on = [aws_iam_role_policy_attachment.ebs_csi_driver]
+}
 # ---------------------------------------------------------------------------
 # Prometheus + Grafana — kube-prometheus-stack
 # Deploys: Prometheus, Alertmanager, Grafana, node-exporter, kube-state-metrics
@@ -237,7 +284,8 @@ resource "helm_release" "kube_prometheus_stack" {
   }
 
   depends_on = [
-    helm_release.metrics_server
+     helm_release.metrics_server,
+     aws_eks_addon.ebs_csi_driver
   ]
 }
 
