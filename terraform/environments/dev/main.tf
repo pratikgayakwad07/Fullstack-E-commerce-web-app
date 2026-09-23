@@ -77,6 +77,8 @@ module "eks_addons" {
   enable_alb_controller     = var.enable_helm_addons
   enable_cluster_autoscaler = var.enable_helm_addons
   enable_metrics_server     = var.enable_helm_addons
+  enable_monitoring         = var.enable_monitoring
+  grafana_admin_password    = var.grafana_admin_password
   tags                      = var.tags
 
   depends_on = [
