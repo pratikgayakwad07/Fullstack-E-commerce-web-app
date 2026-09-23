@@ -41,6 +41,18 @@ variable "enable_metrics_server" {
   default     = true
 }
 
+variable "enable_monitoring" {
+  description = "Whether to deploy Prometheus and Grafana via kube-prometheus-stack"
+  type        = bool
+  default     = true
+}
+
+variable "grafana_admin_password" {
+  description = "Admin password for Grafana"
+  type        = string
+  default     = "admin"
+  sensitive   = true
+}
 variable "tags" {
   description = "Extra tags to apply to every resource in this module"
   type        = map(string)
