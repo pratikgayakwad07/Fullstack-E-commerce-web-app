@@ -118,6 +118,12 @@ variable "grafana_admin_password" {
   sensitive   = true
 }
 
+variable "enable_ebs_csi_driver" {
+  description = "Whether to install the EBS CSI driver (required for Prometheus PVC)"
+  type        = bool
+  default     = true
+}
+
 variable "tags" {
   description = "Common tags to apply to all resources"
   type        = map(string)
