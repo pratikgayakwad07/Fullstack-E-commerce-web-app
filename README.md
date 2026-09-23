@@ -287,7 +287,12 @@ fullstack-E-commerce-web-application/
 
 ## 🖥️ How to run locally?
 
+> [!TIP]
+> 🚀 **Deploying to Local Kubernetes (Docker Desktop / Minikube / Kind)?**
+> See the dedicated [**Local Kubernetes Implementation & Deployment Guide**](./LOCAL_K8S_README.md) for full manifests, pre-seeded local MongoDB, one-click scripts, and setup instructions.
+
 ### Prerequistics
+
 
 Make sure you have the following tools installed locally:
 - JAVA Development Kit (JDK 21)

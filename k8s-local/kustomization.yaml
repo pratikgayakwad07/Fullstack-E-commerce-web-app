@@ -1,0 +1,14 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: purely
+
+resources:
+  - 00-namespace.yaml
+  - 01-mongodb.yaml
+  - 02-service-registry.yaml
+  - 03-config-and-secrets.yaml
+  - 04-backend-services.yaml
+  - 05-api-gateway.yaml
+  - 06-frontend.yaml
+  - 07-ingress.yaml

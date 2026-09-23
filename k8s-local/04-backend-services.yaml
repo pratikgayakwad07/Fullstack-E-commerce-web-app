@@ -1,0 +1,466 @@
+# ==========================================
+# Auth Service
+# ==========================================
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: auth-depl
+  namespace: purely
+  labels:
+    app: auth
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: auth
+  template:
+    metadata:
+      labels:
+        app: auth
+    spec:
+      containers:
+        - name: auth-container
+          image: purely/auth-service:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 9030
+          env:
+            - name: EUREKA_CLIENT_SERVICEURL_DEFAULTZONE
+              valueFrom:
+                configMapKeyRef:
+                  name: auth-config-map
+                  key: EUREKA_CLIENT_SERVICEURL_DEFAULTZONE
+            - name: EUREKA_INSTANCE_HOSTNAME
+              valueFrom:
+                configMapKeyRef:
+                  name: auth-config-map
+                  key: EUREKA_INSTANCE_HOSTNAME
+            - name: SPRING_DATA_MONGODB_URI
+              valueFrom:
+                secretKeyRef:
+                  name: auth-secret
+                  key: SPRING_DATA_MONGODB_URI_AUTH
+          resources:
+            requests:
+              cpu: 150m
+              memory: 256Mi
+            limits:
+              cpu: 500m
+              memory: 512Mi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: auth-svc
+  namespace: purely
+  labels:
+    app: auth
+spec:
+  selector:
+    app: auth
+  ports:
+    - port: 9030
+      targetPort: 9030
+      protocol: TCP
+  type: ClusterIP
+---
+# ==========================================
+# Category Service
+# ==========================================
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: category-depl
+  namespace: purely
+  labels:
+    app: category
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: category
+  template:
+    metadata:
+      labels:
+        app: category
+    spec:
+      containers:
+        - name: category-container
+          image: purely/category-service:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 9000
+          env:
+            - name: EUREKA_CLIENT_SERVICEURL_DEFAULTZONE
+              valueFrom:
+                configMapKeyRef:
+                  name: category-config-map
+                  key: EUREKA_CLIENT_SERVICEURL_DEFAULTZONE
+            - name: EUREKA_INSTANCE_HOSTNAME
+              valueFrom:
+                configMapKeyRef:
+                  name: category-config-map
+                  key: EUREKA_INSTANCE_HOSTNAME
+            - name: SPRING_DATA_MONGODB_URI
+              valueFrom:
+                secretKeyRef:
+                  name: category-secret
+                  key: SPRING_DATA_MONGODB_URI_CATEGORY
+          resources:
+            requests:
+              cpu: 150m
+              memory: 256Mi
+            limits:
+              cpu: 500m
+              memory: 512Mi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: category-svc
+  namespace: purely
+  labels:
+    app: category
+spec:
+  selector:
+    app: category
+  ports:
+    - port: 9000
+      targetPort: 9000
+      protocol: TCP
+  type: ClusterIP
+---
+# ==========================================
+# Product Service
+# ==========================================
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: product-depl
+  namespace: purely
+  labels:
+    app: product
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: product
+  template:
+    metadata:
+      labels:
+        app: product
+    spec:
+      containers:
+        - name: product-container
+          image: purely/product-service:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 9010
+          env:
+            - name: EUREKA_CLIENT_SERVICEURL_DEFAULTZONE
+              valueFrom:
+                configMapKeyRef:
+                  name: product-config-map
+                  key: EUREKA_CLIENT_SERVICEURL_DEFAULTZONE
+            - name: EUREKA_INSTANCE_HOSTNAME
+              valueFrom:
+                configMapKeyRef:
+                  name: product-config-map
+                  key: EUREKA_INSTANCE_HOSTNAME
+            - name: SPRING_DATA_MONGODB_URI
+              valueFrom:
+                secretKeyRef:
+                  name: product-secret
+                  key: SPRING_DATA_MONGODB_URI_PRODUCT
+          resources:
+            requests:
+              cpu: 150m
+              memory: 256Mi
+            limits:
+              cpu: 500m
+              memory: 512Mi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: product-svc
+  namespace: purely
+  labels:
+    app: product
+spec:
+  selector:
+    app: product
+  ports:
+    - port: 9010
+      targetPort: 9010
+      protocol: TCP
+  type: ClusterIP
+---
+# ==========================================
+# Cart Service
+# ==========================================
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cart-depl
+  namespace: purely
+  labels:
+    app: cart
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cart
+  template:
+    metadata:
+      labels:
+        app: cart
+    spec:
+      containers:
+        - name: cart-container
+          image: purely/cart-service:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 9060
+          env:
+            - name: EUREKA_CLIENT_SERVICEURL_DEFAULTZONE
+              valueFrom:
+                configMapKeyRef:
+                  name: cart-config-map
+                  key: EUREKA_CLIENT_SERVICEURL_DEFAULTZONE
+            - name: EUREKA_INSTANCE_HOSTNAME
+              valueFrom:
+                configMapKeyRef:
+                  name: cart-config-map
+                  key: EUREKA_INSTANCE_HOSTNAME
+            - name: SPRING_DATA_MONGODB_URI
+              valueFrom:
+                secretKeyRef:
+                  name: cart-secret
+                  key: SPRING_DATA_MONGODB_URI_CART
+          resources:
+            requests:
+              cpu: 150m
+              memory: 256Mi
+            limits:
+              cpu: 500m
+              memory: 512Mi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: cart-svc
+  namespace: purely
+  labels:
+    app: cart
+spec:
+  selector:
+    app: cart
+  ports:
+    - port: 9060
+      targetPort: 9060
+      protocol: TCP
+  type: ClusterIP
+---
+# ==========================================
+# Order Service
+# ==========================================
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: order-depl
+  namespace: purely
+  labels:
+    app: order
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: order
+  template:
+    metadata:
+      labels:
+        app: order
+    spec:
+      containers:
+        - name: order-container
+          image: purely/order-service:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 9070
+          env:
+            - name: EUREKA_CLIENT_SERVICEURL_DEFAULTZONE
+              valueFrom:
+                configMapKeyRef:
+                  name: order-config-map
+                  key: EUREKA_CLIENT_SERVICEURL_DEFAULTZONE
+            - name: EUREKA_INSTANCE_HOSTNAME
+              valueFrom:
+                configMapKeyRef:
+                  name: order-config-map
+                  key: EUREKA_INSTANCE_HOSTNAME
+            - name: SPRING_DATA_MONGODB_URI
+              valueFrom:
+                secretKeyRef:
+                  name: order-secret
+                  key: SPRING_DATA_MONGODB_URI_ORDER
+          resources:
+            requests:
+              cpu: 150m
+              memory: 256Mi
+            limits:
+              cpu: 500m
+              memory: 512Mi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: order-svc
+  namespace: purely
+  labels:
+    app: order
+spec:
+  selector:
+    app: order
+  ports:
+    - port: 9070
+      targetPort: 9070
+      protocol: TCP
+  type: ClusterIP
+---
+# ==========================================
+# User Service
+# ==========================================
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: user-depl
+  namespace: purely
+  labels:
+    app: user
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: user
+  template:
+    metadata:
+      labels:
+        app: user
+    spec:
+      containers:
+        - name: user-container
+          image: purely/user-service:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 9050
+          env:
+            - name: EUREKA_CLIENT_SERVICEURL_DEFAULTZONE
+              valueFrom:
+                configMapKeyRef:
+                  name: user-config-map
+                  key: EUREKA_CLIENT_SERVICEURL_DEFAULTZONE
+            - name: EUREKA_INSTANCE_HOSTNAME
+              valueFrom:
+                configMapKeyRef:
+                  name: user-config-map
+                  key: EUREKA_INSTANCE_HOSTNAME
+            - name: SPRING_DATA_MONGODB_URI
+              valueFrom:
+                secretKeyRef:
+                  name: user-secret
+                  key: SPRING_DATA_MONGODB_URI_USER
+          resources:
+            requests:
+              cpu: 150m
+              memory: 256Mi
+            limits:
+              cpu: 500m
+              memory: 512Mi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: user-svc
+  namespace: purely
+  labels:
+    app: user
+spec:
+  selector:
+    app: user
+  ports:
+    - port: 9050
+      targetPort: 9050
+      protocol: TCP
+  type: ClusterIP
+---
+# ==========================================
+# Notification Service
+# ==========================================
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: notification-depl
+  namespace: purely
+  labels:
+    app: notification
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: notification
+  template:
+    metadata:
+      labels:
+        app: notification
+    spec:
+      containers:
+        - name: notification-container
+          image: purely/notification-service:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 9020
+          env:
+            - name: EUREKA_CLIENT_SERVICEURL_DEFAULTZONE
+              valueFrom:
+                configMapKeyRef:
+                  name: notification-config-map
+                  key: EUREKA_CLIENT_SERVICEURL_DEFAULTZONE
+            - name: EUREKA_INSTANCE_HOSTNAME
+              valueFrom:
+                configMapKeyRef:
+                  name: notification-config-map
+                  key: EUREKA_INSTANCE_HOSTNAME
+            - name: SPRING_MAIL_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: notification-secret
+                  key: SPRING_MAIL_USERNAME
+            - name: SPRING_MAIL_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: notification-secret
+                  key: SPRING_MAIL_PASSWORD
+          resources:
+            requests:
+              cpu: 150m
+              memory: 256Mi
+            limits:
+              cpu: 500m
+              memory: 512Mi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: notification-svc
+  namespace: purely
+  labels:
+    app: notification
+spec:
+  selector:
+    app: notification
+  ports:
+    - port: 9020
+      targetPort: 9020
+      protocol: TCP
+  type: ClusterIP
