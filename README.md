@@ -1,95 +1,138 @@
-<h1 align="center">🌟 Cloud first microservices e-commerce web application 🌟</h1>
+# 🛍️ Purely — Fullstack Microservices E-Commerce Web Application
 
 <p align="center">
-  <img alt="Static Badge" src="https://img.shields.io/badge/Spring%20Boot-yellowgreen?style=for-the-badge">
-  <img alt="Static Badge" src="https://img.shields.io/badge/React.js-darkblue?style=for-the-badge">
-  <img alt="Static Badge" src="https://img.shields.io/badge/mongodb-darkgreen?style=for-the-badge">
-  <img alt="Static Badge" src="https://img.shields.io/badge/jwt-hotpink?style=for-the-badge">
-  <img alt="Static Badge" src="https://img.shields.io/badge/docker-blue?style=for-the-badge">
-  <img alt="Static Badge" src="https://img.shields.io/badge/kubernetes-skyblue?style=for-the-badge">
-  <img alt="Static Badge" src="https://img.shields.io/badge/terraform-purple?style=for-the-badge">
-  <img alt="Static Badge" src="https://img.shields.io/badge/AWS%20EKS-tomato?style=for-the-badge">
-  <img alt="Static Badge" src="https://img.shields.io/badge/AWS%20ECR-orange?style=for-the-badge">
-  <img alt="Static Badge" src="https://img.shields.io/badge/GITHUB%20ACTIONS-white?style=for-the-badge">
+  <img alt="Spring Boot" src="https://img.shields.io/badge/Spring%20Boot-3.x-6DB33F?style=for-the-badge&logo=springboot&logoColor=white" />
+  <img alt="React" src="https://img.shields.io/badge/React-18.x-61DAFB?style=for-the-badge&logo=react&logoColor=black" />
+  <img alt="Kubernetes" src="https://img.shields.io/badge/Kubernetes-Local%20Cluster-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white" />
+  <img alt="Docker" src="https://img.shields.io/badge/Docker-Containers-2496ED?style=for-the-badge&logo=docker&logoColor=white" />
+  <img alt="MongoDB" src="https://img.shields.io/badge/MongoDB-6.0-47A248?style=for-the-badge&logo=mongodb&logoColor=white" />
+  <img alt="Spring Cloud Gateway" src="https://img.shields.io/badge/Spring%20Cloud-Gateway-6DB33F?style=for-the-badge" />
+  <img alt="Netflix Eureka" src="https://img.shields.io/badge/Eureka-Service%20Discovery-E50914?style=for-the-badge" />
 </p>
 
-- Purely is a cloud-first microservices web application showcasing Kubernetes. The application is a web-based e-commerce app where users can browse items, add them to the cart, and purchase them.
-- The architecture leverages **Spring Boot microservices**, **Spring Cloud Gateway**, and **Eureka Service Registry**, with a **React.js frontend** and **MongoDB databases**. 
-- The solution is containerized and deployed to **AWS Elastic Kubernetes Service (EKS)** using **Helm** and automated via **GitHub Actions CI/CD** pipelines.
+---
 
-## 📑 Table of contents
+## 📖 Overview
 
-1.  [Project Tree](#-project-tree)
-2.  [Development Set up](#-development-set-up)
-    - [Component Diagram](#component-diagram)
-    - [Frontend](#frontend)
-    - [Service Registry](#service-registry)
-    - [Api Gateway](#api-gateway)
-    - [Auth Service](#auth-service)
-    - [Category Service](#category-service)
-    - [Product Service](#product-service)
-    - [Cart Service](#cart-service)
-    - [Order Service](#order-service)
-    - [Notification Service](#notification-service)
-    - [Communication between services](#communication-between-services)
-3. [Deployment Set up](#-deployment-set-up)
-    - [Deployment Diagram](#deployment-diagram)
-    - [Containerization](#containerization)
-    - [Kubernetes Orchestration](#kubernetes-orchestration)
-    - [AWS Infrastructure](#aws-infrastructure)
-      - [Networking (AWS VPC)](#networking-aws-vpc)
-      - [Kubernetes Cluster (AWS EKS)](#kubernetes-cluster-aws-eks)
-    - [Terraform - Infrastructure as Code](#terraform-infrastructure-as-code)
-    - [CI/CD with GitHub Actions](#cicd-with-github-actions)
-4. [How to run locally?](#%EF%B8%8F-how-to-run-locally)
-5. [How to deploy to AWS?](#%EF%B8%8F-how-to-deploy-to-amazon-eks)
-6. [Demo video](#demo-video)
+**Purely** is a production-grade, fullstack e-commerce web application engineered with a distributed microservices architecture. It is fully configured and optimized to run out-of-the-box on **local Kubernetes clusters** (Docker Desktop Kubernetes, Minikube, or Kind) without requiring any external cloud providers.
 
-## 📂 Project tree
+### 🌟 Key Capabilities
+- **Distributed Microservices**: Individual Spring Boot services for Auth, Catalog, Products, Cart, Orders, Users, and Notifications.
+- **Dynamic Service Discovery & Routing**: Netflix Eureka Service Registry and Spring Cloud Gateway dynamically register and route requests.
+- **Frontend Reverse Proxy**: Nginx container serving the React SPA with built-in reverse proxying for all `/api/*` endpoints to eliminate CORS and port conflicts.
+- **In-Cluster MongoDB with Auto-Seeding**: Automatic initialization with sample categories, products, and schemas upon startup.
+- **Developer-Friendly Scripts**: One-click build, deploy, port-forward, and teardown scripts for both **PowerShell (Windows)** and **Bash (macOS/Linux/WSL)**.
+- **Resource Optimized**: Tuned container memory and CPU requests/limits to comfortably run on standard 8GB–16GB laptops (~2.5–3.5 GB RAM total).
+
+---
+
+## 🏛️ System Architecture
+
+```mermaid
+graph TD
+    subgraph Host["Host Machine / Browser"]
+        Browser["User Browser<br/>(http://localhost:30080 or http://localhost:3000)"]
+    end
+
+    subgraph K8s["Local Kubernetes Cluster (Namespace: purely)"]
+        subgraph IngressLayer["Frontend & Ingress Layer"]
+            NodePort["NodePort Service :30080"]
+            FrontendPod["React Web App (web-app)<br/>Nginx Reverse Proxy"]
+        end
+
+        subgraph GatewayLayer["API Gateway Layer"]
+            GatewaySvc["gateway-svc:80 / 8080"]
+            GatewayPod["Spring Cloud Gateway (gateway)"]
+        end
+
+        subgraph RegistryLayer["Service Discovery"]
+            RegistrySvc["registry-svc:80 / 8761"]
+            RegistryPod["Netflix Eureka Server (service-registry)"]
+        end
+
+        subgraph BackendLayer["Spring Boot Microservices"]
+            AuthSvc["auth-svc:9030<br/>(Auth Service)"]
+            CatSvc["category-svc:9000<br/>(Category Service)"]
+            ProdSvc["product-svc:9010<br/>(Product Service)"]
+            CartSvc["cart-svc:9060<br/>(Cart Service)"]
+            OrderSvc["order-svc:9070<br/>(Order Service)"]
+            UserSvc["user-svc:9050<br/>(User Service)"]
+            NotifSvc["notification-svc:9020<br/>(Notification Service)"]
+        end
+
+        subgraph DBLayer["Database Layer"]
+            MongoSvc["mongodb-svc:27017"]
+            MongoPod["MongoDB 6.0<br/>Auto-seeded from sample-data/"]
+        end
+    end
+
+    Browser -->|HTTP Port 30080| NodePort
+    NodePort --> FrontendPod
+    FrontendPod -->|Internal Reverse Proxy /api/*| GatewaySvc
+    GatewaySvc --> GatewayPod
+
+    GatewayPod -->|Fetch Service Instances| RegistrySvc
+    RegistrySvc --> RegistryPod
+
+    BackendLayer -->|Register & Heartbeat| RegistrySvc
+
+    GatewayPod -->|/api/auth-service/**| AuthSvc
+    GatewayPod -->|/api/category-service/**| CatSvc
+    GatewayPod -->|/api/product-service/**| ProdSvc
+    GatewayPod -->|/api/cart-service/**| CartSvc
+    GatewayPod -->|/api/order-service/**| OrderSvc
+    GatewayPod -->|/api/user-service/**| UserSvc
+    GatewayPod -->|/api/notification-service/**| NotifSvc
+
+    AuthSvc --> MongoSvc
+    CatSvc --> MongoSvc
+    ProdSvc --> MongoSvc
+    CartSvc --> MongoSvc
+    OrderSvc --> MongoSvc
+    UserSvc --> MongoSvc
+```
+
+---
+
+## 📦 Component Matrix
+
+| Service | Container Port | Service Port | Technology Stack | Database / Role |
+| :--- | :--- | :--- | :--- | :--- |
+| **`web-app`** | `80` | `30080` (NodePort) | React, Vite, Nginx | Frontend SPA + `/api/*` reverse proxy |
+| **`api-gateway`** | `8080` | `80` / `8080` | Spring Cloud Gateway | Unified routing & filter enforcement |
+| **`service-registry`** | `8761` | `80` / `8761` | Spring Netflix Eureka | Service discovery & registration |
+| **`auth-service`** | `9030` | `9030` | Spring Boot, JWT, BCrypt | `purely_auth_service` (MongoDB) |
+| **`category-service`** | `9000` | `9000` | Spring Boot | `purely_category_service` (MongoDB) |
+| **`product-service`** | `9010` | `9010` | Spring Boot | `purely_product_service` (MongoDB) |
+| **`cart-service`** | `9060` | `9060` | Spring Boot, OpenFeign | `purely_cart_service` (MongoDB) |
+| **`order-service`** | `9070` | `9070` | Spring Boot, OpenFeign | `purely_order_service` (MongoDB) |
+| **`user-service`** | `9050` | `9050` | Spring Boot | `purely_user_service` (MongoDB) |
+| **`notification-service`** | `9020` | `9020` | Spring Boot, JavaMail | Order emails & notifications |
+| **`mongodb`** | `27017` | `27017` | MongoDB 6.0 | In-cluster storage pre-loaded with data |
+
+---
+
+## 📂 Repository Structure
 
 ```
-fullstack-E-commerce-web-application/
-├── .github/
-│   └── workflows/
-│       ├── ci-cd-auth.yml
-│       ├── ci-cd-cart.yml
-│       ├── ci-cd-category.yml
-│       ├── ci-cd-gateway.yml
-│       ├── ci-cd-ingress.yml
-│       ├── ci-cd-notification.yml
-│       ├── ci-cd-order.yml
-│       ├── ci-cd-product.yml
-│       ├── ci-cd-registry.yml
-│       ├── ci-cd-user.yml
-│       └── ci-cd-web.yml
-├── assets/
-├── frontend/
+Fullstack-E-commerce-web-app/
+├── assets/                         # Architecture diagrams & screenshots
+├── frontend/                       # React SPA source code, Nginx config & Dockerfile
 │   ├── nginx/
-│   ├── public/
-│   ├── src/
-│   │   ├── api-service/
-│   │   ├── assets/
-│   │   ├── components/
-│   │   ├── contexts/
-│   │   ├── pages/
-│   │   ├── routes/
-|   |   ├── App.jsx
-│   │   └── main.jsx
-│   ├── Dockerfile
-│   └── index.html
-├── helm-charts/
-│   ├── api-gateway/
-│   ├── auth-service/
-│   ├── cart-service/
-│   ├── category-service/
-│   ├── ingress-alb/
-│   ├── notification-service/
-│   ├── order-service/
-│   ├── product-service/
-│   ├── service-registry/
-│   ├── user-service/
-│   └── web-app/
-├── microservice-backend/
+│   │   └── default.conf            # Nginx reverse proxy configuration
+│   ├── src/                        # React UI components, contexts, pages, routes
+│   └── Dockerfile                  # Multi-stage production build Dockerfile
+├── k8s-local/                      # Clean local Kubernetes manifests
+│   ├── 00-namespace.yaml           # Namespace: purely
+│   ├── 01-mongodb.yaml             # MongoDB deployment, service & auto-seed init
+│   ├── 02-service-registry.yaml    # Netflix Eureka deployment & service
+│   ├── 03-config-and-secrets.yaml  # Centralized environment configs & secrets
+│   ├── 04-backend-services.yaml    # 7 Spring Boot microservice deployments & services
+│   ├── 05-api-gateway.yaml         # API Gateway deployment & service
+│   ├── 06-frontend.yaml            # React frontend deployment & NodePort service (30080)
+│   ├── 07-ingress.yaml             # Standard NGINX Ingress manifest (optional)
+│   └── kustomization.yaml          # Kustomize manifest for single-command deploy
+├── microservice-backend/           # Java Spring Boot microservices source code
 │   ├── api-gateway/
 │   ├── auth-service/
 │   ├── cart-service/
@@ -99,393 +142,233 @@ fullstack-E-commerce-web-application/
 │   ├── product-service/
 │   ├── service-registry/
 │   └── user-service/
-├── sample-data/
+├── sample-data/                    # Sample JSON datasets for category & product catalog
 │   ├── purely_category_service.categories.json
 │   └── purely_product_service.products.json
-└── terraform/
-│   ├── common-data.tf
-│   ├── common-provider.tf
-│   ├── common-variables.tf
-│   ├── ecr-registries.tf
-│   ├── eks-access-entries.tf
-│   ├── eks-alb-controller.tf
-│   ├── eks-cluster-autoscaler.tf
-│   ├── eks-cluster.tf
-│   ├── eks-metrics-server.tf
-│   ├── eks-node-groups.tf
-│   ├── eks-openid-connect-provider.tf
-│   ├── policies/
-│   │   ├── AWSLoadBalancerControllerIAMPolicy.json
-│   │   └── EKSClusterAutoscalerIAMPolicy.json
-│   ├── vpc-internet-gateway.tf
-│   ├── vpc-nat-gateway.tf
-│   ├── vpc-route-tables.tf
-│   ├── vpc-subnets.tf
-│   └── vpc.tf
+├── scripts/                        # Cross-platform deployment & helper scripts
+│   ├── build-images.ps1 / .sh      # Builds all 10 Docker images locally
+│   ├── deploy-local.ps1 / .sh      # Deploys manifests in dependency order
+│   ├── port-forward.ps1 / .sh      # Optional helper for standard localhost ports
+│   └── teardown-local.ps1 / .sh    # Cleans up namespace and frees RAM/CPU
+├── .gitignore
+├── LICENSE
 └── README.md
 ```
 
-## 👨‍💻 Development set up
+---
 
-- **Microservices Architecture**: Independent services for User, Auth, Product, Category, Cart, Order, and Notification.
-- **Service Discovery**: Centralized Eureka Service Registry manages dynamic discovery of microservices within the cluster. Simplifies communication and load balancing between services.
-- **API Gateway**: Built using Spring Cloud Gateway. Acts as the single entry point for all client requests.
-- **Frontend**: Developed in React.js, providing a responsive user interface. Communicates with the backend exclusively via API Gateway.
-- **Databases**: Each microservice uses a dedicated MongoDB database.
-  
-### Component Diagram 
+## 📋 Prerequisites
 
-<img src="assets/component-diagram.png" />
+Before running the application, ensure you have the following installed:
 
-### Frontend 
+1. **Docker Desktop** (or **Minikube** / **Kind**).
+2. **Kubernetes CLI (`kubectl`)**.
+3. **PowerShell** (Windows) or **Bash** (macOS/Linux/WSL).
 
-### Service Registry
+---
 
-- The <a href="./microservice-backend/service-registry">Service Registry</a> serves as a centralized repository for storing information about all the available services in the microservices architecture. 
+## 🚀 Step-by-Step Local Deployment
 
-- This includes details such as IP addresses, port numbers, and other metadata required for communication.
+### Step 1: Enable & Verify Local Kubernetes
 
-- As services start, stop, or scale up/down dynamically in response to changing demand, they update their registration information in the Service Registry accordingly.
+#### Option A: Docker Desktop (Recommended on Windows & macOS)
+1. Open **Docker Desktop**.
+2. Navigate to **Settings (⚙️) > Kubernetes**.
+3. Check **Enable Kubernetes** and click **Apply & restart**.
+4. In your terminal, set the context and verify connectivity:
+   ```powershell
+   kubectl config use-context docker-desktop
+   kubectl cluster-info
+   ```
 
-### API Gateway
-
-- The <a href="./microservice-backend/api-gateway">API gateway</a> acts as a centralized entry point for clients, providing a unified interface to access the microservices.
-
-- API gateway acts as the traffic cop of our microservices architecture. It routes incoming requests to the appropriate microservice, or instance based on predefined rules or configurations.
-
-
-### Auth Service
-
-- The <a href="./microservice-backend/auth-service">Auth Service</a> is responsible for securely verifying user identities and facilitating token-based authentication.
-
-| HTTP Method | Route Path | Parameters | Description |
-|----------|----------|----------|----------|
-| <img alt="Static Badge" src="https://img.shields.io/badge/post-green?style=for-the-badge"> | `/auth/signin`   | - | User login |
-| <img alt="Static Badge" src="https://img.shields.io/badge/post-green?style=for-the-badge"> | `/auth/signup`   | - | User registration   |
-| <img alt="Static Badge" src="https://img.shields.io/badge/get-blue?style=for-the-badge"> | `/auth/signup/verify`   | code | Validate registration one time password code |
-| <img alt="Static Badge" src="https://img.shields.io/badge/get-blue?style=for-the-badge"> | `/auth/isValidToken`   | token | Validate json web token  |
-
-
-### Category Service
-
-- The <a href="./microservice-backend/category-service">Category Service</a> provides centralized data management and operations for product categories.
-
-| HTTP Method | Route Path | Parameters | Description | Authentication | Role | 
-|----------|----------|----------|----------| ----------| ----------|
-| <img alt="Static Badge" src="https://img.shields.io/badge/post-green?style=for-the-badge"> | `/admin/category/create`   | - | Create new category | Yes | Admin |
-| <img alt="Static Badge" src="https://img.shields.io/badge/put-yellow?style=for-the-badge"> | `/admin/category/edit`   | categoryId | Edit existing category | Yes | Admin |
-| <img alt="Static Badge" src="https://img.shields.io/badge/delete-red?style=for-the-badge"> | `/admin/category/delete`   | categoryId | Delete existing category | Yes | Admin |
-| <img alt="Static Badge" src="https://img.shields.io/badge/get-blue?style=for-the-badge"> | `/category/get/all`   | - | Get all categories | No | Admin/User/Non user |
-| <img alt="Static Badge" src="https://img.shields.io/badge/get-blue?style=for-the-badge"> | `/category/get/byId`   | categoryId | Get category by id | No |  Admin/User/Non user  |
-
-### Product Service
-
-- The <a href="./microservice-backend/product-service">Product Service</a> provides centralized data management and operations for available products.
-
-| HTTP Method | Route Path | Parameters | Description | Authentication | Role (Admin/User) | 
-|----------|----------|----------|----------| ----------| ----------|
-| <img alt="Static Badge" src="https://img.shields.io/badge/post-green?style=for-the-badge"> | `/admin/product/add`   | - | Create new product | Yes | Admin |
-| <img alt="Static Badge" src="https://img.shields.io/badge/put-yellow?style=for-the-badge"> | `/admin/product/edit`   | productId | Edit existing product | Yes | Admin |
-| <img alt="Static Badge" src="https://img.shields.io/badge/get-blue?style=for-the-badge"> | `/product/get/all`   | - | Get all products | No |  Admin/User/Non user  |
-| <img alt="Static Badge" src="https://img.shields.io/badge/get-blue?style=for-the-badge"> | `/product/get/byId`   | productId | Get product by id | No |  Admin/User/Non user  |
-| <img alt="Static Badge" src="https://img.shields.io/badge/get-blue?style=for-the-badge"> | `/product/get/byCategory`   | categoryId | Get product by category | No |  Admin/User/Non user  |
-| <img alt="Static Badge" src="https://img.shields.io/badge/get-blue?style=for-the-badge"> | `/product/search`   | searchKey | Search products by key | No |  Admin/User/Non user  |
-
-### Cart Service
-
-- The <a href="./microservice-backend/cart-service">Cart Service</a> provides centralized data management and operations for user carts.
-
-| HTTP Method | Route Path | Parameter | Description | Authentication | Role (Admin/User) | 
-|----------|----------|----------|----------| ----------| ----------|
-| <img alt="Static Badge" src="https://img.shields.io/badge/post-green?style=for-the-badge"> | `/cart/add`   | - | Add item to cart, update quantity | Yes | User |
-| <img alt="Static Badge" src="https://img.shields.io/badge/get-blue?style=for-the-badge"> | `/cart/get/byUser` | - | Get cart details by user | Yes | User |
-| <img alt="Static Badge" src="https://img.shields.io/badge/get-blue?style=for-the-badge"> | `/cart/get/byId` | cartId | Get cart details by cart id | Yes | User |
-| <img alt="Static Badge" src="https://img.shields.io/badge/delete-red?style=for-the-badge"> | `/cart/remove`   | productId | Remove an item from the cart | Yes | User |
-| <img alt="Static Badge" src="https://img.shields.io/badge/delete-red?style=for-the-badge"> | `/cart/clear/byId`   | cartId | Remove all the items from the cart | Yes | User |
-
-### Order Service
-
-- The <a href="./microservice-backend/order-service">Order Service</a> provides centralized data management and operations for orders.
-
-| HTTP Method | Route Path | Parameter | Description | Authentication | Role (Admin/User) | 
-|----------|----------|----------|----------| ----------| ----------|
-| <img alt="Static Badge" src="https://img.shields.io/badge/post-green?style=for-the-badge"> | `/order/create`   | - | Place an order | Yes | User |
-| <img alt="Static Badge" src="https://img.shields.io/badge/get-blue?style=for-the-badge"> | `/order/get/byUser` | - | Get orders by user | Yes | User |
-| <img alt="Static Badge" src="https://img.shields.io/badge/get-blue?style=for-the-badge"> | `/order/get/all`   | - | Get all orders | Yes | Admin |
-| <img alt="Static Badge" src="https://img.shields.io/badge/delete-red?style=for-the-badge"> | `/order/cancel`   | orderId | Cancel the order | Yes | User |
-
-### Notification Service
-
-- The <a href="./microservice-backend/notification-service">Notification Service</a> provides centralized operations for send emails to user.
-
-| HTTP Method | Route Path | Description | 
-|----------|----------|----------|
-| <img alt="Static Badge" src="https://img.shields.io/badge/post-green?style=for-the-badge"> | `/notification/send`   | Send email | 
-
-### Communication between services
-
-- OpenFeign, a declarative HTTP client library for Java, is used to simplify the process of making HTTP requests to other microservices.
-  
-## 🚀 Deployment set up
-
-### Deployment Diagram
-
-<img alt="Deployment-Diagram" src="assets/deployment-diagram.png" />
-
-### Containerization
-
-- Each component ([frontend](./frontend/Dockerfile), [service-registry](./service-registry/Dockerfile), [api-gateway](./api-gateway/Dockerfile), and [other microservices](./category-service/Dockerfile)) has its own Dockerfile, and is packaged into a Docker image.
-- Images pushed to **Amazon Elastic Container Registry (ECR)**.
-
-### Kubernetes Orchestration
-
-- Each service is deployed as a separate Helm chart under [`/helm-charts`](`/helm-charts`) directory.
-- Each chart includes Kubernetes resources: `Deployment`, `hpa`, `Service`, `ConfigMaps`, and `Secrets`.
-- All components ([Ingress](./helm-charts/ingress-alb), [frontend](./helm-charts/web-app), [service-registry](./helm-charts/service-registry), [api-gateway](./helm-charts/api-gateway), and [other microservices](./helm-charts/category-service)) deployed as `ClusterIP` service type.
-
-### AWS Infrastructure
-
-#### Networking (AWS VPC)
-
-- A dedicated [VPC](./terraform/vpc.tf) across two Availability Zones (AZs).
-- [Subnets](./terraform/vpc-subnets.tf):
-  - 2 Public subnets (1 in each AZ).
-  - 2 Private subnets (1 in each AZ).
-- [Internet Gateway](./terraform/vpc-internet-gateway.tf): Attached to VPC for public subnet access for public subnets.
-- [NAT Gateway](/terraform/vpc-nat-gateway.tf): Deployed in one public subnet, allowing outbound internet access for resources in private subnets (e.g., EKS worker nodes pulling Docker images).
-- [Route Tables](./terraform/vpc-route-tables.tf):
-  - Public route table routes internet-bound traffic via Internet Gateway.
-  - Private route table routes internet-bound traffic via NAT Gateway.
-
-#### Kubernetes Cluster (AWS EKS)
-
-- [**EKS Cluster**](./terraform/eks-cluster.tf) deployed within the above VPC.
-- [**EKS Node Group (managed worker nodes)**](./terraform/eks-node-groups.tf) spread across the two AZs for high availability. Worker nodes are deployed in private subnets, ensuring they are not exposed directly to the internet.
-- [**Application Load Balancer controller**](./terraform/eks-alb-controller.tf) is installed within the EKS cluster, to let traffic route using ingress.
-- [**Metrics-server**](./terraform/eks-metrics-server.tf) is installed within the EKS cluster, to let `Horizontal Pod AutoScaler` get the current CPU/memory usage for each Pod.
-- [**Cluster AutoScaler**](./terraform/eks-cluster-autoscaler.tf) is installed within the EKS Cluster, automatically adjusting the number of worker nodes in the EKS cluster based on pending pods.
-
-> Horizontal Pod AutoScaler (HPA) is a Kubernetes resource that automatically scales the number of pods in a Deployment, ReplicaSet, or StatefulSet. It continuously watches pod resource metrics (like CPU %, memory %, or custom metrics) from metrics-server. If usage goes above or below a defined threshold, it increases or decreases pods.
-
-> Cluster Autoscaler (CA) is a Kubernetes component that automatically adjusts the number of worker nodes in the cluster. If HPA scales up pods but no nodes have enough resources to run them, CA adds new nodes. If nodes are scaled down, it removes nodes to save cost.
-
-### Terraform (Infrastructure as Code)
-
-- Infrastructure provisioned using Terraform, ensuring reproducibility and automation.
-- Terraform manage:
-  - [VPC](./terraform/vpc.tf) ([subnets](./terraform/vpc-subnets.tf), [Internet Gateway](./terraform/vpc-internet-gateway.tf), [NAT Gateway](/terraform/vpc-nat-gateway.tf), [route tables](./terraform/vpc-route-tables.tf)).
-  - [EKS Cluster](./terraform/eks-cluster.tf) (Control Plane, [Managed Node Groups](./terraform/eks-node-groups.tf), [Access Entry]((./terraform/eks-access-entries.tf)), [Metrics-server](./terraform/eks-metrics-server.tf), [Application Load Balancer Controller](./terraform/eks-alb-controller.tf), [Cluster Autoscaler](./terraform/eks-cluster-autoscaler.tf)).
-  - [ECR Repositories](./terraform/ecr_registries.tf) for storing Docker images.
-
-### CI/CD with GitHub Actions
-
-- [Separate workflow files](./.github/workflows) per service for isolation and independent deployments.
-- Workflow stages:
-  - Build & test
-  - Build Docker image and push to ECR
-  - Deploy/update Helm release on EKS
-
-## 🖥️ How to run locally?
-
-> [!TIP]
-> 🚀 **Deploying to Local Kubernetes (Docker Desktop / Minikube / Kind)?**
-> See the dedicated [**Local Kubernetes Implementation & Deployment Guide**](./LOCAL_K8S_README.md) for full manifests, pre-seeded local MongoDB, one-click scripts, and setup instructions.
-
-### Prerequistics
-
-
-Make sure you have the following tools installed locally:
-- JAVA Development Kit (JDK 21)
-- Maven
-- Node.js
-- npm
-- Git
-  
-### Step 1: Fork and Clone the Repository
-
-1. Fork the repository to your GitHub account.
-
-2. Clone the forked repository to your local machine.
-
+#### Option B: Minikube
 ```bash
-git clone https://github.com/<your-username>/Fullstack-E-commerce-web-application
+minikube start --cpus=4 --memory=8192
+kubectl config use-context minikube
 ```
 
-
-### Step 2: Setting up databases.
-
-1. Create the following databases in MongoDB Atlas and update the `spring.data.mongodb.uri` value in `application.yml` file of each service:
-
-- `purely_auth_service`
-- `purely_category_service`
-- `purely_product_service`
-- `purely_cart_service`
-- `purely_order_service`
-
-2. You can find sample data for products and categories to get started [here](./sample-data/).
-
-### Step 3: Setting up e-mail configurations
-
-1. In the `notification-service`, configure the following credentials in the [`application.properties`](./microservice-backend/notification-service/src/main/resources/application.properties) file to enable email sending functionality:
-
-```properties
-spring.mail.username=YOUR_USERNAME
-spring.mail.password=YOUR_PASSWORD
+#### Option C: Kind
+```bash
+kind create cluster --name purely
+kubectl config use-context kind-purely
 ```
 
-Replace `YOUR_USERNAME` and `YOUR_PASSWORD` with your actual email service credentials.
+---
 
-### Step 4: Run the microservices.
+### Step 2: Build Container Images
 
-1. First run [`service-registry`](./microservice-backend/service-registry/). Access the Eureka dashboard at [`http://localhost:8761`](http://localhost:8761). Next run the other services. 
+Build all 10 container images locally with a single script:
 
-```
-mvn springboot:run
-```
-
-2. Make sure all the services are up and running in the [Eureka Dashboard](http://localhost:8761) as below.
-   
-<img width="960" alt="Eureka Dashboard" src="assets/eureka-dashboard.png" />
-
-### Step 5: Run the frontend
-
-1. Navigate to [frontend direcory](./frontend/).
-```
-cd ./frontend
+**Windows (PowerShell):**
+```powershell
+.\scripts\build-images.ps1
 ```
 
-2. Install dependencies.
-```
-npm install
-```
-
-3. Update API_BASE_URL in [`apiConfig.js`](/frontend/src/api-service/apiConfig.jsx).
-
-```js
-const API_BASE_URL =  "http://localhost:8080"
+**macOS / Linux / WSL (Bash):**
+```bash
+chmod +x ./scripts/*.sh
+./scripts/build-images.sh
 ```
 
-3. Run the app.
-```
-npm run dev
-```
+> **Note for Minikube / Kind users:**  
+> If using Docker Desktop, images built with `docker build` are immediately available to your local Kubernetes cluster.  
+> If using Minikube or Kind, run `eval $(minikube docker-env)` before building, or load images using `minikube image load <image-name>`.
 
-Access the application at [`http://localhost:5173/`](http://localhost:5173/)
+---
 
-## ☁️ How to deploy to Amazon EKS?
+### Step 3: Deploy to Kubernetes
 
-### Prerequistics
+Deploy all resources (Namespace, MongoDB + seed data, Service Registry, Config/Secrets, 7 Microservices, API Gateway, and Frontend):
 
-Make sure you have the following tools installed locally:
-- kubectl
-- Helm
-- AWS CLI
-- ekctl
-- Terraform
-
-### Step 1: Containerization
-
-- Each component (frontend, service-registry, api-gateway, and microservices) has its own Dockerfile.
-- You don’t need to change anything here. The components will be automatically built and push images to Amazon ECR when running CI/CD.
-  
-### Step 2: Kubernetes Orchestration
-
-- Each service is deployed as a separate Helm chart under [`/helm-charts`](`/helm-charts`) directory. Leave them as that.
-- No need to modify the chart structure unless adding new services or debugging purposes.
-
-### Step 3: AWS Infrastructure  
-
-- AWS resources are provisioned using Terraform manifests in the [`terraform/`](terraform/) directory.
-- By default, you can’t directly access an eks cluster without the **AmazonEKSClusterAdminPolicy**.
-  - For each user who needs access (root, GitHub Actions IAM user, local AWS CLI user), you must create an access entry in the cluster.
-  - In this project:  Access entries are defined in [`terraform/eks_access_entry.tf`](terraform/eks_access_entry.tf).
-  - Update IAM usernames for GitHub Actions and local CLI in [terraform/variables.tf](terraform/variables.tf).
-
-- Then, run the following commands:
-  
-```
-terraform init
-terraform plan
-terraform apply
+**Windows (PowerShell):**
+```powershell
+.\scripts\deploy-local.ps1
 ```
 
-- This will create a VPC, subnets (2 public, 2 private), an Internet Gateway, a NAT Gateway, and route tables. You can verify the networking setup from `AWS console > VPC > Resource Map`.
-
-<img width="960" alt="VPC Resource Map" src="assets/vpc-resource-map.png" />
-
-- This will deploy an EKS cluster (purely-cluster), EKS node groups, Application Load Balancer controller, Metrics server, and Cluster autoscaler.
-- After Terraform finishes, update your kubeconfig (Ensure the local AWS CLI user has an access entry in the EKS cluster.
-
-```
-aws eks update-kubeconfig --region YOUR_REGION --name YOUR_CLUSTER_NAME
+**macOS / Linux / WSL (Bash):**
+```bash
+./scripts/deploy-local.sh
 ```
 
-<img width="960" alt="Update kubeconfig" src="assets/update-kube-config.png" />
+*(Alternatively, deploy directly via `kubectl apply -k k8s-local/`)*.
 
-- Next, ensure that nodes, Application Load Balancer controller, Metrics server, and Cluster autoscaler are installed properly.
+---
 
-<img width="960" alt="EKS Cluster" src="assets/verify-cluster-kube-system.png" />
+### Step 4: Access the Application
 
-### Step 4: CI/CD with GitHub Actions
+#### Method 1: Direct NodePort URL (Instant Access)
+Open your browser and navigate directly to:
+👉 **[http://localhost:30080](http://localhost:30080)**
 
-- IAM User for CI/CD
-  - Create an IAM user with permissions to EKS and ECR.
-  - Ensure this user has an access entry in the EKS cluster.
-- Add the following secrets to your GitHub repository:
+*(If using Minikube, execute `minikube service web-app-svc -n purely` to launch the browser)*.
 
-| Secret | Value |
-| ------- | -------- |
-| `AWS_ACCESS_KEY_ID` | Access key of IAM user|
-| `AWS_REGION` | `us-east-1` (unless you’re using a different AWS region) |
-| `AWS_SECRET_ACCESS_KEY` | Secret access key of IAM user |
-|`ECR_AUTH_REPOSITORY`| `purely_auth_registry` (unless you're using a different name for ECR repository of Auth service) |
-| `ECR_CART_REPOSITORY` | `purely_cart_registry` (unless you're using a different name for ECR repository of Cart service) |
-| `ECR_CATEGORY_REPOSITORY` | `purely_category_registry` (unless you're using a different name for ECR repository of Category service) |
-| `ECR_GATEWAY_REPOSITORY` | `purely_gayeway_registry` (unless you're using a different name for ECR repository of API Gateway) |
-| `ECR_NOTIFICATION_REPOSITORY` | `purely_notification_registry` (unless you're using a different name for ECR repository of Notification service) |
-| `ECR_ORDER_REPOSITORY` | `purely_order_registry` (unless you're using a different name for ECR repository of Order service) |
-| `ECR_PRODUCT_REPOSITORY` |  `purely_product_registry` (unless you're using a different name for ECR repository of Product service) |
-| `ECR_REGISTRY_REPOSITORY` | `purely_service_registry` (unless you're using a different name for ECR repository of Service Registry)  |
-| `ECR_USER_REPOSITORY` | `purely_user_registry` (unless you're using a different name for ECR repository of User service)  |
-| `ECR_WEB_REPOSITORY` | `purely_web_registry` (unless you're using a different name for ECR repository of Frontend)  |
-| `EKS_CLUSTER` |  `purely-cluster` (unless you're using a different name for EKS cluster) |
-| `SPRING_DATA_MONGODB_URI_AUTH` | Database URI of auth service from MongoDB Atlas |
-| `SPRING_DATA_MONGODB_URI_CART` |  Database URI of cart service from MongoDB Atlas |
-| `SPRING_DATA_MONGODB_URI_CATEGORY` | Database URI of category service from MongoDB Atlas |
-| `SPRING_DATA_MONGODB_URI_ORDER` | Database URI of order service from MongoDB Atlas |
-| `SPRING_DATA_MONGODB_URI_PRODUCT` | Database URI of product service from MongoDB Atlas |
-| `SPRING_MAIL_PASSWORD` | Your mail app password  |
-| `SPRING_MAIL_USERNAME` | Your mail |
+#### Method 2: Port-Forwarding Helper (Standard Ports)
+Run the port-forwarding helper script:
+```powershell
+.\scripts\port-forward.ps1    # On Windows
+./scripts/port-forward.sh     # On macOS / Linux / WSL
+```
 
-- Each service has its own workflow file (ensuring isolation). Trigger workflows from GitHub Actions. Once completed, services will be live in your EKS cluster.
+Now access services on standard ports:
+- **🛍️ Frontend Web App**: [http://localhost:3000](http://localhost:3000)
+- **🔍 Eureka Service Registry**: [http://localhost:8761](http://localhost:8761)
+- **🌐 API Gateway**: [http://localhost:8080](http://localhost:8080)
 
-✅ Deployment Complete!
+---
 
-- Verify cluster resources:
-  - Nodes
-<img width="960" alt="Verify Nodes" src="assets/verify-nodes.png" />
+## 🧪 Verification & Health Checks
 
-  - Deployment
-<img width="960" alt="Verify Deployment" src="assets/verify-deployments.png" />
+### 1. Verify Pod Status
+Check that all 11 pods in the `purely` namespace are in `Running` status:
+```powershell
+kubectl get pods -n purely
+```
 
-  - Horizontal Pod Autoscaler
-<img width="960" alt="Verify HPA" src="assets/verify-hpa.png" />
+Expected output:
+```
+NAME                                READY   STATUS    RESTARTS   AGE
+mongodb-depl-xxxxxxxxx-xxxxx        1/1     Running   0          2m
+registry-depl-xxxxxxxxx-xxxxx       1/1     Running   0          2m
+auth-depl-xxxxxxxxx-xxxxx           1/1     Running   0          1m
+category-depl-xxxxxxxxx-xxxxx       1/1     Running   0          1m
+product-depl-xxxxxxxxx-xxxxx        1/1     Running   0          1m
+cart-depl-xxxxxxxxx-xxxxx           1/1     Running   0          1m
+order-depl-xxxxxxxxx-xxxxx          1/1     Running   0          1m
+user-depl-xxxxxxxxx-xxxxx           1/1     Running   0          1m
+notification-depl-xxxxxxxxx-xxxxx   1/1     Running   0          1m
+gateway-depl-xxxxxxxxx-xxxxx        1/1     Running   0          1m
+web-app-depl-xxxxxxxxx-xxxxx        1/1     Running   0          1m
+```
 
-  - Service
-<img width="960" alt="Verify Service" src="assets/verify-svc.png" />
+### 2. Verify Service Discovery
+Open the Eureka dashboard at **[http://localhost:8761](http://localhost:8761)** (with port-forwarding active) to verify that all microservices are registered and `UP`:
+- `API-GATEWAY`
+- `AUTH-SERVICE`
+- `CATEGORY-SERVICE`
+- `PRODUCT-SERVICE`
+- `CART-SERVICE`
+- `ORDER-SERVICE`
+- `USER-SERVICE`
+- `NOTIFICATION-SERVICE`
 
-  - Ingress
-<img width="960" alt="Verify Ingress" src="assets/verify-ingress.png" />
+### 3. Verify Application Functionality
+1. Open the UI at **[http://localhost:30080](http://localhost:30080)** (or `http://localhost:3000`).
+2. Verify category cards appear on the home page (*Fitness Equipment, Nutrition, Personal Care, Mental Wellness, Home Gym Essentials*).
+3. Browse products pre-seeded from MongoDB (*Yoga Mat, Dumbbells Set, Protein Powder, Vitamin C Tablets, etc.*).
+4. Register a new user account, log in, add items to cart, and place an order.
 
-<img width="960" alt="Describe Ingress" src="assets/ingress-describe.png" /> 
+### 4. Viewing Logs
+```powershell
+# API Gateway logs
+kubectl logs -n purely -l app=gateway -f
 
-  - Verify the Eureka server via port forwarding
-<img width="960" alt="Eureka Dashboard Port forward" src="assets/verify-eureka.png" />
+# Product Service logs
+kubectl logs -n purely -l app=product -f
 
-<img width="960" alt="Eureka Dashboard" src="assets/eureka-dashboard-port-forward.png" /> 
+# In-cluster MongoDB logs
+kubectl logs -n purely -l app=mongodb -f
 
-Copy the Ingress DNS address from the `kubectl get ingress` and open it in your browser to view the live application.
+# Frontend logs
+kubectl logs -n purely -l app=web-app -f
+```
 
-## Demo video
+---
 
-https://github.com/user-attachments/assets/d648cb16-6008-44b0-ad2a-b6752df40702
+## 🛠️ Configuration & Customization
+
+All environment variables and credentials are centrally managed in [`k8s-local/03-config-and-secrets.yaml`](file:///c:/Users/riyag/Fullstack-E-commerce-web-app/k8s-local/03-config-and-secrets.yaml).
+
+### Using External MongoDB Atlas (Optional)
+To use a remote MongoDB Atlas database instead of the local in-cluster MongoDB:
+1. Open [`k8s-local/03-config-and-secrets.yaml`](file:///c:/Users/riyag/Fullstack-E-commerce-web-app/k8s-local/03-config-and-secrets.yaml).
+2. Update the `SPRING_DATA_MONGODB_URI_*` keys in `purely-secrets` with your Atlas connection string (e.g. `mongodb+srv://<user>:<password>@cluster0.mongodb.net/purely_auth_service`).
+3. Apply changes and restart services:
+   ```powershell
+   kubectl apply -f k8s-local/03-config-and-secrets.yaml
+   kubectl rollout restart deployment -n purely
+   ```
+
+### Enabling Real SMTP Email Notifications (Optional)
+1. Open [`k8s-local/03-config-and-secrets.yaml`](file:///c:/Users/riyag/Fullstack-E-commerce-web-app/k8s-local/03-config-and-secrets.yaml).
+2. Update `SPRING_MAIL_USERNAME` and `SPRING_MAIL_PASSWORD` in `notification-secret`.
+3. Apply changes:
+   ```powershell
+   kubectl apply -f k8s-local/03-config-and-secrets.yaml
+   kubectl rollout restart deployment notification-depl -n purely
+   ```
+
+---
+
+## 🔧 Troubleshooting Guide
+
+| Issue / Symptom | Root Cause | Solution |
+| :--- | :--- | :--- |
+| **`Cannot connect to server` on `kubectl`** | Docker Desktop is not running or Kubernetes is disabled. | Start Docker Desktop, ensure Kubernetes is enabled in Settings, and set context: `kubectl config use-context docker-desktop`. |
+| **`ErrImageNeverPull` / `ImagePullBackOff`** | Docker images have not been built locally yet. | Run `.\scripts\build-images.ps1` (or `./scripts/build-images.sh`) to build images locally. |
+| **Categories/Products are empty on UI** | MongoDB pod is still initializing or seed script hasn't run. | Check MongoDB logs: `kubectl logs -n purely -l app=mongodb`. Wait ~30s and refresh the browser. |
+| **API calls return `404` or `500` on initial load** | Spring Boot microservices are still warming up or registering with Eureka. | Wait 30–60 seconds for full startup and Eureka heartbeat propagation. |
+| **NodePort `http://localhost:30080` unreachable (Minikube)** | Minikube requires an active network tunnel for NodePort. | Run `minikube service web-app-svc -n purely` or run `.\scripts\port-forward.ps1`. |
+
+---
+
+## 🧹 Teardown & Cleanup
+
+To delete all deployments, services, secrets, and the `purely` namespace to free up all laptop RAM/CPU:
+
+**Windows (PowerShell):**
+```powershell
+.\scripts\teardown-local.ps1
+```
+
+**macOS / Linux / WSL (Bash):**
+```bash
+./scripts/teardown-local.sh
+```
+
+*(Or via kubectl: `kubectl delete namespace purely`)*.
+
+---
+
+## 📄 License
+
+This project is licensed under the terms of the [Apache License 2.0](file:///c:/Users/riyag/Fullstack-E-commerce-web-app/LICENSE).
